@@ -37,5 +37,8 @@
     "develop": "gatsby develop",
     "build": "gatsby build",
     "start": "gatsby serve"
+  },
+  "devDependencies": {
+    "dotenv": "^6.2.0"
   }
 }
