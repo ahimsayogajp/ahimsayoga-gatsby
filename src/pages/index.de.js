@@ -64,7 +64,10 @@ class IndexPage extends React.Component {
     // with the appropriate language code
     const i18nMessages = require(`../data/messages/${langKey}`);
 
-    const deProductEdges = this.props.data.german.edges
+    var deProductEdges = [];
+    if (this.props.data.german !== null) {
+      deProductEdges = this.props.data.german.edges
+    }
     return (
       <div>
         <IntlProvider
