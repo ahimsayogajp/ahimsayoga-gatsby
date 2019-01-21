@@ -11,7 +11,6 @@ const propTypes = {
 }
 
 const Product = ({ node }) => (
-
   <div>
     <Link
       style={{ color: `inherit`, textDecoration: `none` }}
@@ -42,12 +41,15 @@ const Product = ({ node }) => (
 
 class IndexPage extends React.Component {
   render() {
-    const usProductEdges = this.props.data.us.edges
+    var jaProductEdges = [];
+    if (this.props.data.japanese !== null) {
+      jaProductEdges = this.props.data.japanese.edges
+    }
     return (
       <Layout data={this.props.data} location={this.props.location}>
-      <div style={{ marginBottom: rhythm(2) }}>
-          <h3>en-US</h3>
-          {usProductEdges.map(({ node }, i) => (
+        <div style={{ marginBottom: rhythm(2) }}>
+          <h3>ja</h3>
+          {jaProductEdges.map(({ node }, i) => (
             <Product node={node} key={node.id} />
           ))}
         </div>
@@ -61,7 +63,7 @@ IndexPage.propTypes = propTypes
 export default IndexPage
 
 export const pageQuery = graphql`
-  query PageEnUsQuery {
+  query PageJaQuery {
     site {
       siteMetadata {
         languages {
@@ -70,7 +72,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    us: allContentfulProduct(filter: { node_locale: { eq: "en-US" } }) {
+    japanese: allContentfulProduct(filter: { node_locale: { eq: "ja" } }) {
       edges {
         node {
           id
