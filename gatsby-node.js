@@ -104,6 +104,53 @@ exports.createPages = ({ graphql, actions }) => {
 
           resolve()
         })
+      }).then(() => {
+        graphql(
+          `
+            {
+              allContentfulHome(limit: 1000) {
+                edges {
+                  node {
+                    id
+                    contentful_id
+                    node_locale
+                    slug
+                  }
+                }
+              }
+            }
+          `
+        ).then(result => {
+          if (result.errors) {
+            reject(result.errors)
+          }
+
+          // Create Category pages
+          const homeTemplate = path.resolve(`./src/templates/home.js`)
+          // We want to create a detailed page for each
+          // category node. We'll just use the Contentful id for the slug.
+          _.each(result.data.allContentfulHome.edges, edge => {
+            // Get the URL slug from Contentful content type
+            const slug = edge.node.slug
+            // Gatsby uses Redux to manage its internal state.
+            // Plugins and sites can use functions like "createPage"
+            // to interact with Gatsby.
+            createPage({
+              // Each page is required to have a `path` as well
+              // as a template component. The `context` is
+              // optional but is often necessary so the template
+              // can query data specific to each page.
+              path: `/${edge.node.node_locale}/${edge.node.slug}/`,
+              component: slash(homeTemplate),
+              context: {
+                id: edge.node.id,
+                contentful_id:  edge.node.contentful_id,
+              },
+            })
+          })
+
+          resolve()
+        })
       })
   })
 }
