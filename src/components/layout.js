@@ -32,7 +32,7 @@ class TemplateWrapper extends Component {
               { name: 'keywords', content: 'ヨガ, ヨガ教室, ヨガ能美市, ヨガ金沢' },
             ]}
           />
-          <Header langs={this.langsMenu} />
+          <Header langs={this.langsMenu} locale={this.langKey} />
           <div>
             <Link to="/">
               <h3>
