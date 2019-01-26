@@ -10,26 +10,26 @@ const propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-class HomeTemplate extends React.Component {
+class ContactTemplate extends React.Component {
   render() {
     const data = this.props.data;
     return (
       <Layout data={this.props.data} location={this.props.location}>
         <div>
-          <h1>{data.contentfulHome.heading}</h1>
-          <span>Some HOME detail...</span>
+          <h1>{data.contentfulContact.heading}</h1>
+          <span>Some CONTACT detail...</span>
         </div>
       </Layout>
     )
   }
 }
 
-HomeTemplate.propTypes = propTypes
+ContactTemplate.propTypes = propTypes
 
-export default HomeTemplate
+export default ContactTemplate
 
 export const pageQuery = graphql`
-  query homeQuery($id: String!) {
+  query contactQuery($id: String!) {
     site {
       siteMetadata {
         languages {
@@ -38,7 +38,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    contentfulHome(id: { eq: $id }) {
+    contentfulContact(id: { eq: $id }) {
       title
       heading
     }

@@ -10,12 +10,12 @@ const propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-const Product = ({ node }) => (
+const Home = ({ node }) => (
 
   <div>
     <Link
       style={{ color: `inherit`, textDecoration: `none` }}
-      to={`/${node.node_locale}/products/${node.contentful_id}/`}
+      to={`/${node.node_locale}/${node.slug}/`}
     >
       <div
         style={{
@@ -26,15 +26,7 @@ const Product = ({ node }) => (
           marginBottom: rhythm(1 / 2),
         }}
       >
-        <div style={{ marginRight: rhythm(1 / 2) }}>
-          {node.image[0].resolutions.src && (
-            <Img
-              style={{ margin: 0 }}
-              resolutions={node.image[0].resolutions}
-            />
-          )}
-        </div>
-        <div style={{ flex: 1 }}>{node.productName.productName}</div>
+        <div style={{ flex: 1 }}>{node.heading}</div>
       </div>
     </Link>
   </div>
@@ -42,13 +34,13 @@ const Product = ({ node }) => (
 
 class IndexPage extends React.Component {
   render() {
-    const enProductEdges = this.props.data.english.edges
+    const enHomeEdges = this.props.data.english.edges
     return (
       <Layout data={this.props.data} location={this.props.location}>
       <div style={{ marginBottom: rhythm(2) }}>
           <h3>en</h3>
-          {enProductEdges.map(({ node }, i) => (
-            <Product node={node} key={node.id} />
+          {enHomeEdges.map(({ node }, i) => (
+            <Home node={node} key={node.id} />
           ))}
         </div>
       </Layout>
@@ -70,20 +62,15 @@ export const pageQuery = graphql`
         }
       }
     }
-    english: allContentfulProduct(filter: { node_locale: { eq: "en" } }) {
+    english: allContentfulHome(filter: { node_locale: { eq: "en" } }) {
       edges {
         node {
           id
           contentful_id
           node_locale
-          productName {
-            productName
-          }
-          image {
-            resolutions(width: 75) {
-              ...GatsbyContentfulResolutions
-            }
-          }
+          title
+          heading
+          slug
         }
       }
     }
