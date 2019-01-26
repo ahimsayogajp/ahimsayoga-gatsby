@@ -2,6 +2,7 @@ import React from "react"
 import * as PropTypes from "prop-types"
 import { Link, graphql } from 'gatsby'
 import Img from "gatsby-image"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 
@@ -9,14 +10,18 @@ const propTypes = {
   data: PropTypes.object.isRequired,
 }
 
+const Container = styled.div`
+  background-color: pink;
+`
+
 const Home = ({ node }) => (
-  <div>
+  <Container>
     <Link to={`/${node.node_locale}/${node.slug}/`}>
       <div>
         <div>{node.heading}</div>
       </div>
     </Link>
-  </div>
+  </Container>
 )
 
 class IndexPage extends React.Component {
