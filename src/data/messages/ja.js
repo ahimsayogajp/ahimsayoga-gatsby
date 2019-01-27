@@ -3,5 +3,5 @@ module.exports = {
   'home': 'ホーム',
   'about': 'Shivam Yogaについて',
   'schedule': 'スケジュール',
-  'contact': 'ご予約・お問い合わせ'
+  'contact': 'お問合せ'
 };
