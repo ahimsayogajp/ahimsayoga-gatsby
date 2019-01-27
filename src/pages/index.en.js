@@ -16,11 +16,7 @@ const Container = styled.div`
 
 const Home = ({ node }) => (
   <Container>
-    <Link to={`/${node.node_locale}/${node.slug}/`}>
-      <div>
-        <div>{node.heading}</div>
-      </div>
-    </Link>
+    <div>{node.heading}</div>
   </Container>
 )
 

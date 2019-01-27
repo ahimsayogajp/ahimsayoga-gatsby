@@ -13,14 +13,15 @@ const Header = (props) => (
           Ahimsa - Shivam Yoga Center
         </Link>
       </h1>
-      <MainNav locale={props.locale} />
+      <MainNav locale={props.locale} messages={props.messages} />
       <SelectLanguage langs={props.langs} />
     </div>
   </div>
 )
 
 MainNav.propTypes = {
-  locale: PropTypes.string
+  locale: PropTypes.string,
+  messages: PropTypes.object
 }
 
 export default Header;

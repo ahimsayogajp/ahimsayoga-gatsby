@@ -11,17 +11,14 @@ const propTypes = {
 }
 
 const Container = styled.div`
-  background-color: pink;
+  background-color: green;
 `
 
 const Home = ({ node }) => (
   <Container>
-    {console.log(node)}
-    <Link to={`/${node.node_locale}/${node.slug}/`}>
-      <div>
-        <div>{node.heading}</div>
-      </div>
-    </Link>
+    <div>
+      <div>{node.heading}</div>
+    </div>
   </Container>
 )
 
