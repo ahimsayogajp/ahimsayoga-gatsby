@@ -10,13 +10,13 @@ const propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-const Container = styled.div`
+const Container = styled.section`
   background-color: pink;
 `
 
 const Home = ({ node }) => (
   <Container>
-    <div>{node.heading}</div>
+    {node.heading}
   </Container>
 )
 
@@ -24,10 +24,7 @@ class IndexPage extends React.Component {
   render() {
     return (
       <Layout data={this.props.data} location={this.props.location}>
-        <div>
-          <h3>EN</h3>
-          <Home node={this.props.data.page}></Home>
-        </div>
+        <Home node={this.props.data.page}></Home>
       </Layout>
     )
   }

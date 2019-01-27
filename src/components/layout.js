@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Link from "gatsby-link"
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
-import Header from './Header'
 import Helmet from 'react-helmet'
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { IntlProvider, addLocaleData } from 'react-intl';
@@ -12,6 +11,10 @@ import en from 'react-intl/locale-data/en';
 import 'intl/locale-data/jsonp/en';
 import ja from 'react-intl/locale-data/ja';
 import 'intl/locale-data/jsonp/ja';
+
+import Header from './Header'
+import Footer from './Footer'
+import favicon from '../images/favicon.png';
 
 // add concatenated locale data
 addLocaleData([...en, ...ja]);
@@ -46,17 +49,15 @@ class TemplateWrapper extends Component {
               { name: 'description', content: 'ヨガ教室：　Kanazawa 金沢　ヨガ, Nomi 能美市' },
               { name: 'keywords', content: 'ヨガ, ヨガ教室, ヨガ能美市, ヨガ金沢' },
             ]}
+            link={[
+              { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }
+            ]}
           />
           <Header langs={this.langsMenu} locale={this.langKey} messages={this.i18nMessages} />
-          <div>
-            <Link to="/">
-              <h3>
-                Example
-              </h3>
-            </Link>
+          <main>
             {this.children}
-            <hr />
-          </div>
+          </main>
+          <Footer langs={this.langsMenu} locale={this.langKey} messages={this.i18nMessages} />
         </div>
       </IntlProvider>
     );

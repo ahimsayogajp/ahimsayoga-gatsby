@@ -6,7 +6,7 @@ import SelectLanguage from './SelectLanguage';
 import MainNav from './MainNav'
 
 const Header = (props) => (
-  <div>
+  <header>
     <div>
       <h1>
         <Link to="/">
@@ -16,10 +16,10 @@ const Header = (props) => (
       <MainNav locale={props.locale} messages={props.messages} />
       <SelectLanguage langs={props.langs} />
     </div>
-  </div>
+  </header>
 )
 
-MainNav.propTypes = {
+Header.propTypes = {
   locale: PropTypes.string,
   messages: PropTypes.object
 }

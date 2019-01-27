@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link'
 
 const MainNav = (props) => (
-  <nav>
+  <nav className="main">
     <ul>
       <li>
         <Link to={'/' + props.locale + '/'}>{props.messages.home}</Link>

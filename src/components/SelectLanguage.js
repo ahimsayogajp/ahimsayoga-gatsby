@@ -13,14 +13,12 @@ const SelectLanguage = (props) => {
   );
 
   return (
-    <section>
-      <header>
+    <nav className="language-switcher">
         <FormattedMessage id="selectLanguage" />
-      </header>
       <ul>
         {links}
       </ul>
-    </section>
+    </nav>
   );
 };
 
