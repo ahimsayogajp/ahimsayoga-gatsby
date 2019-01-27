@@ -2,23 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import { FormattedMessage } from 'react-intl';
+import styled from "styled-components"
+
+const Nav = styled.nav`
+  float: right;
+`
+
+const Li = styled.li`
+  display: inline;
+  padding: 1em;
+`
 
 const SelectLanguage = (props) => {
   const links = props.langs.map(lang =>
     <Link to={lang.link} key={lang.langKey}>
-      <li selected={lang.selected}>
+      <Li selected={lang.selected}>
         {lang.langKey}
-      </li>
+      </Li>
     </Link>
   );
 
   return (
-    <nav className="language-switcher">
+    <Nav className="language-switcher">
         <FormattedMessage id="selectLanguage" />
       <ul>
         {links}
       </ul>
-    </nav>
+    </Nav>
   );
 };
 

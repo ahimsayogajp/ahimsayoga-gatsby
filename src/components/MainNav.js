@@ -1,23 +1,35 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link'
+import styled from "styled-components"
+
+
+const Ul = styled.ul`
+  margin: auto;
+  text-align: center;
+`
+
+const Li = styled.li`
+  display: inline;
+  padding: 1em;
+`
 
 const MainNav = (props) => (
   <nav className="main">
-    <ul>
-      <li>
+    <Ul>
+      <Li>
         <Link to={'/' + props.locale + '/'}>{props.messages.home}</Link>
-      </li>
-      <li>
+      </Li>
+      <Li>
         <Link to={'/' + props.locale + '/about'}>{props.messages.about}</Link>
-      </li>
-      <li>
+      </Li>
+      <Li>
         <Link to={'/' + props.locale + '/schedule'}>{props.messages.schedule}</Link>
-      </li>
-      <li>
+      </Li>
+      <Li>
         <Link to={'/' + props.locale + '/contact'}>{props.messages.contact}</Link>
-      </li>
-    </ul>
+      </Li>
+    </Ul>
   </nav>
 )
 

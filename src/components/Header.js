@@ -4,13 +4,14 @@ import Link from 'gatsby-link'
 
 import SelectLanguage from './SelectLanguage';
 import MainNav from './MainNav'
+import logo from '../images/logo.png';
 
 const Header = (props) => (
   <header>
     <div>
       <h1>
         <Link to="/">
-          Ahimsa - Shivam Yoga Center
+          <img src={logo} alt="Ahimsa - Shivam Yoga Center" />
         </Link>
       </h1>
       <MainNav locale={props.locale} messages={props.messages} />
