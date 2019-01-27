@@ -2,6 +2,7 @@ import React from "react"
 import * as PropTypes from "prop-types"
 import { Link, graphql } from 'gatsby'
 import Img from "gatsby-image"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 
@@ -9,27 +10,27 @@ const propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-const Home = ({ node }) => (
+const Container = styled.div`
+  background-color: pink;
+`
 
-  <div>
+const Home = ({ node }) => (
+  <Container>
     <Link to={`/${node.node_locale}/${node.slug}/`}>
       <div>
         <div>{node.heading}</div>
       </div>
     </Link>
-  </div>
+  </Container>
 )
 
 class IndexPage extends React.Component {
   render() {
-    const enHomeEdges = this.props.data.english.edges
     return (
       <Layout data={this.props.data} location={this.props.location}>
         <div>
-          <h3>en</h3>
-          {enHomeEdges.map(({ node }, i) => (
-            <Home node={node} key={node.id} />
-          ))}
+          <h3>EN</h3>
+          <Home node={this.props.data.page}></Home>
         </div>
       </Layout>
     )
@@ -50,17 +51,15 @@ export const pageQuery = graphql`
         }
       }
     }
-    english: allContentfulHome(filter: { node_locale: { eq: "en" } }) {
-      edges {
-        node {
-          id
-          contentful_id
-          node_locale
-          title
-          heading
-          slug
-        }
-      }
+    page: contentfulHome(node_locale: { eq: "en" }, slug: { eq: "home"}) {
+      title
+      heading
+      id
+      contentful_id
+      node_locale
+      title
+      heading
+      slug
     }
   }
 `
