@@ -1,5 +1,5 @@
 module.exports = {
-  'selectLanguage': 'Wählen Sie Ihre Sprache',
+  'selectLanguage': '言語を選んでください',
   'home': 'ホーム',
   'about': 'Shivam Yogaについて',
   'schedule': 'スケジュール',
