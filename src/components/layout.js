@@ -6,6 +6,7 @@ import Helmet from 'react-helmet'
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import 'intl';
+import styled from "styled-components"
 
 import en from 'react-intl/locale-data/en';
 import 'intl/locale-data/jsonp/en';
@@ -18,6 +19,16 @@ import favicon from '../images/favicon.png';
 
 // add concatenated locale data
 addLocaleData([...en, ...ja]);
+
+const Container = styled.div`
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main main main'
+    'footer footer footer footer footer footer';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+`
 
 class TemplateWrapper extends Component {
   constructor(props) {
@@ -42,7 +53,7 @@ class TemplateWrapper extends Component {
         locale={this.langKey}
         messages={this.i18nMessages}
       >
-        <div>
+        <Container>
           <Helmet
             title="Ahimsa - Shivam Yoga Center"
             meta={[
@@ -58,7 +69,7 @@ class TemplateWrapper extends Component {
             {this.children}
           </main>
           <Footer langs={this.langsMenu} locale={this.langKey} messages={this.i18nMessages} />
-        </div>
+        </Container>
       </IntlProvider>
     );
   }

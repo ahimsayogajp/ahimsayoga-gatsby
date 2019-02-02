@@ -1,23 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link'
+import styled from "styled-components"
 
 import SelectLanguage from './SelectLanguage';
 import MainNav from './MainNav'
 import logo from '../images/logo.png';
 
+const Top = styled.header`
+  grid-area: header;
+`
+
 const Header = (props) => (
-  <header>
+  <Top>
     <div>
-      <h1>
-        <Link to="/">
-          <img src={logo} alt="Ahimsa - Shivam Yoga Center" />
-        </Link>
-      </h1>
+      <Link to="/">
+        <img src={logo} alt="Ahimsa - Shivam Yoga Center" />
+      </Link>
       <MainNav locale={props.locale} messages={props.messages} />
       <SelectLanguage langs={props.langs} />
     </div>
-  </header>
+  </Top>
 )
 
 Header.propTypes = {

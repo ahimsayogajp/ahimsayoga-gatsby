@@ -5,7 +5,8 @@ import { FormattedMessage } from 'react-intl';
 import styled from "styled-components"
 
 const Nav = styled.nav`
-  float: right;
+display: inline;
+  text-align: center;
 `
 
 const Li = styled.li`

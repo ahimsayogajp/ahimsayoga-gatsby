@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link'
 import styled from "styled-components"
 
+const Nav = styled.nav`
+  display: inline;
+`
 
 const Ul = styled.ul`
   margin: auto;
@@ -15,7 +18,7 @@ const Li = styled.li`
 `
 
 const MainNav = (props) => (
-  <nav className="main">
+  <Nav className="main">
     <Ul>
       <Li>
         <Link to={'/' + props.locale + '/'}>{props.messages.home}</Link>
@@ -30,7 +33,7 @@ const MainNav = (props) => (
         <Link to={'/' + props.locale + '/contact'}>{props.messages.contact}</Link>
       </Li>
     </Ul>
-  </nav>
+  </Nav>
 )
 
 MainNav.propTypes = {
