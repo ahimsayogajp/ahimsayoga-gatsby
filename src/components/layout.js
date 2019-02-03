@@ -6,7 +6,7 @@ import Helmet from 'react-helmet'
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import 'intl';
-import styled from "styled-components"
+import styled from 'styled-components'
 
 import en from 'react-intl/locale-data/en';
 import 'intl/locale-data/jsonp/en';
@@ -20,14 +20,21 @@ import favicon from '../images/favicon.png';
 // add concatenated locale data
 addLocaleData([...en, ...ja]);
 
+// Overall Grid: https://www.layoutit.com/grid/ysWOYND
+
 const Container = styled.div`
-  grid-template-areas:
-    'header header header header header header'
-    'menu main main main main main'
-    'footer footer footer footer footer footer';
-  grid-gap: 10px;
-  background-color: #2196F3;
-  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "header" "main" "footer";
+`
+
+const Main = styled.main`
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 0.3fr 0.6fr 3.2fr 0.6fr 0.3fr;
+  grid-template-rows: auto;
+  grid-template-areas: "left-gutter left-sidebar center right-sidebar right-gutter";
 `
 
 class TemplateWrapper extends Component {
@@ -65,9 +72,9 @@ class TemplateWrapper extends Component {
             ]}
           />
           <Header langs={this.langsMenu} locale={this.langKey} messages={this.i18nMessages} />
-          <main>
+          <Main>
             {this.children}
-          </main>
+          </Main>
           <Footer langs={this.langsMenu} locale={this.langKey} messages={this.i18nMessages} />
         </Container>
       </IntlProvider>

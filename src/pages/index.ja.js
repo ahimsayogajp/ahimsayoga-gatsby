@@ -11,6 +11,7 @@ const propTypes = {
 }
 
 const Container = styled.section`
+  grid-area: center;
   background-color: green;
 `
 

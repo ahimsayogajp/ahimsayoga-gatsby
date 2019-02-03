@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link'
-import styled from "styled-components"
+import styled from 'styled-components'
 
 const Nav = styled.nav`
+  grid-area: center;
   display: inline;
 `
 
