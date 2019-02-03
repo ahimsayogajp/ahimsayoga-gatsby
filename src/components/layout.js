@@ -8,6 +8,8 @@ import { IntlProvider, addLocaleData } from 'react-intl';
 import 'intl';
 import styled from 'styled-components'
 
+import { createGlobalStyle } from "styled-components"
+
 import en from 'react-intl/locale-data/en';
 import 'intl/locale-data/jsonp/en';
 import ja from 'react-intl/locale-data/ja';
@@ -20,6 +22,15 @@ import favicon from '../images/favicon.png';
 // add concatenated locale data
 addLocaleData([...en, ...ja]);
 
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    font-size: 14px;
+    font-family: "Lato",Helvetica,Arial,sans-serif;
+    color: #696969;
+  }
+`
+
 // Overall Grid: https://www.layoutit.com/grid/ysWOYND
 
 const Container = styled.div`
@@ -27,6 +38,7 @@ const Container = styled.div`
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas: "header" "main" "footer";
+  font-family: "Lato",Helvetica,Arial,sans-serif;
 `
 
 const Main = styled.main`
@@ -61,6 +73,9 @@ class TemplateWrapper extends Component {
         messages={this.i18nMessages}
       >
         <Container>
+          <React.Fragment>
+            <GlobalStyle />
+          </React.Fragment>
           <Helmet
             title="Ahimsa - Shivam Yoga Center"
             meta={[

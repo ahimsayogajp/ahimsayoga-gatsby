@@ -6,6 +6,16 @@ import styled from 'styled-components'
 const Nav = styled.nav`
   grid-area: center;
   display: inline;
+  line-height: 100px;
+  font-size: 14px;
+  font-weight: bold;
+  a {
+    color: #333;
+    text-decoration: none;
+    &:hover, &[aria-current] {
+      color: #f76b6a;
+    }
+  }
 `
 
 const Ul = styled.ul`

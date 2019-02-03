@@ -11,12 +11,16 @@ const Head = styled.header`
   grid-area: header;
   display: grid;
   grid-template-columns: 0.3fr 0.7fr 3fr 0.7fr 0.3fr;;
-  grid-template-rows: 1fr;
+  grid-template-rows: auto;
   grid-template-areas: "left-gutter logo nav lang right-gutter";
+  box-shadow: 0 1px 5px rgba(0,0,0,0.46);
+  font-family: 'Montserrat',sans-serif;
+  text-transform: uppercase;
 `
 
 const Logo = styled.div`
   grid-area: logo;
+  padding-top: 10px;
 `
 
 const NavContainer = styled.div`
