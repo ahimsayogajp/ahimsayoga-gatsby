@@ -9,6 +9,14 @@ const Nav = styled.nav`
   line-height: 100px;
   font-size: 14px;
   font-weight: bold;
+  ul {
+    margin: auto;
+    text-align: center;
+  }
+  li {
+    display: inline;
+    padding: 1em;
+  }
   a {
     color: #333;
     text-decoration: none;
@@ -18,32 +26,22 @@ const Nav = styled.nav`
   }
 `
 
-const Ul = styled.ul`
-  margin: auto;
-  text-align: center;
-`
-
-const Li = styled.li`
-  display: inline;
-  padding: 1em;
-`
-
 const MainNav = (props) => (
   <Nav className="main">
-    <Ul>
-      <Li>
+    <ul>
+      <li>
         <Link to={'/' + props.locale + '/'}>{props.messages.home}</Link>
-      </Li>
-      <Li>
+      </li>
+      <li>
         <Link to={'/' + props.locale + '/about'}>{props.messages.about}</Link>
-      </Li>
-      <Li>
+      </li>
+      <li>
         <Link to={'/' + props.locale + '/schedule'}>{props.messages.schedule}</Link>
-      </Li>
-      <Li>
+      </li>
+      <li>
         <Link to={'/' + props.locale + '/contact'}>{props.messages.contact}</Link>
-      </Li>
-    </Ul>
+      </li>
+    </ul>
   </Nav>
 )
 
