@@ -106,7 +106,7 @@ const Nav = styled.nav`
 
   /* 48em = 768px */
 
-  @media (min-width: 48em) {
+  @media (min-width: 58em) {
     ul {
       margin: auto;
       text-align: center;

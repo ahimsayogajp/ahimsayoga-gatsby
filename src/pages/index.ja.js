@@ -10,16 +10,70 @@ const propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-const Container = styled.section`
+const MasterContainer = styled.section`
+  width: 100vw;
+  position: relative;
+`
+
+const ContentGrid = styled.div`
+  display: grid;
+  grid-template-columns: 0.3fr 0.6fr 3.2fr 0.6fr 0.3fr;
+  grid-template-rows: auto;
+  grid-template-areas: "left-gutter left-sidebar center right-sidebar right-gutter";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+`
+
+const HeadingContainer = styled.div`
   grid-area: center;
-  background-color: green;
+  align-items: center;
+  position: relative;
+`
+
+const HeadingContainerInner = styled.div`
+  position: absolute;
+  top: 35%;
+  h1, strong {
+    color: #fff;
+  }
+  strong {
+    font-family: Alex Brush;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 34px;
+  }
+  h1 {
+    font-size: 48px;
+  }
+`
+
+const Image = styled(Img)`
+  left: 0;
+  top: 1px;
+  z-index: -1;
 `
 
 const Home = ({ node }) => (
-  <Container>
-      <Img fixed={node.hero.fixed} />
-      {node.heading}
-  </Container>
+  <MasterContainer>
+    <Image
+        key={node.hero.fluid.src}
+        alt={node.hero.title}
+        fluid={node.hero.fluid}
+        aspectRatio={node.hero.aspectRatio}
+        sizes={node.hero.sizes}
+    />
+    <ContentGrid>
+      <HeadingContainer>
+        <HeadingContainerInner>
+          <strong>{node.welcome}</strong>
+          <h1>{node.heading}</h1>
+        </HeadingContainerInner>
+      </HeadingContainer>
+    </ContentGrid>
+  </MasterContainer>
 )
 
 class IndexPage extends React.Component {
@@ -56,13 +110,15 @@ export const pageQuery = graphql`
       heading
       slug
       hero {
-        fixed {
-          width
-          height
+        title
+        fluid {
           src
           srcSet
+          aspectRatio
+          sizes
         }
       }
+      welcome
     }
   }
 `
