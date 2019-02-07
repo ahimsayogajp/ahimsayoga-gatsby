@@ -35,7 +35,7 @@ const HeadingContainer = styled.div`
 
 const HeadingContainerInner = styled.div`
   position: absolute;
-  top: 25%;
+  top: 5%;
   h1, strong {
     color: #fff;
   }
@@ -43,10 +43,28 @@ const HeadingContainerInner = styled.div`
     font-family: Alex Brush;
     font-weight: 400;
     font-style: normal;
-    font-size: 34px;
+    font-size: 24px;
   }
   h1 {
+    font-size: 28px;
+  }
+  @media (min-width: 35em) {
+    top: 15%;
+    strong {
+      font-size: 28px;
+    }
+    h1 {
+    font-size: 43px;
+  }
+  }
+  @media (min-width: 65em) {
+    top: 25%;
+    strong {
+      font-size: 34px;
+    }
+    h1 {
     font-size: 48px;
+  }
   }
 `
 
@@ -69,6 +87,8 @@ const ContentContainer = styled.div`
   grid-area: center;
   font-family: 'Montserrat',sans-serif;
   font-size: 24px;
+  padding-bottom: 75px;
+  border-bottom: 1px solid #eee;
 `
 
 const Home = ({ node }) => (

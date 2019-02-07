@@ -29,6 +29,9 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Lato",Helvetica,Arial,sans-serif;
     color: #333;
   }
+  h1 {
+    margin-block-start: 0;
+  }
 `
 
 // Overall Grid: https://www.layoutit.com/grid/ysWOYND
