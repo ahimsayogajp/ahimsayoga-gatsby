@@ -48,18 +48,18 @@ const Footer = (props) => (
     <FooterContent>
       <CopyrightContainer>
         <div className="social-media">
-          <Link title="Facebook" to="https://www.facebook.com/ahimsayogajp/">
+          <a title="Facebook" href="https://www.facebook.com/ahimsayogajp/">
             <FaFacebook size='1.75em' />
-          </Link>
-          <Link title="Twitter" to="https://www.twitter.com/ahimsayogajp/">
+          </a>
+          <a title="Twitter" href="https://www.twitter.com/ahimsayogajp/">
             <FaTwitter size='1.75em' />
-          </Link>
-          <Link title="Instagram" to="https://www.instagram.com/ahimsayogajp/">
+          </a>
+          <a title="Instagram" href="https://www.instagram.com/ahimsayogajp/">
             <FaInstagram size='1.75em' />
-          </Link>
-          <Link title="Youtube" to="https://www.youtube.com/channel/UCihAjjXntS8Q-5a4wBIolgQ">
+          </a>
+          <a title="Youtube" href="https://www.youtube.com/channel/UCihAjjXntS8Q-5a4wBIolgQ">
             <FaYoutube size='1.75em' />
-          </Link>
+          </a>
         </div>
         <div className="footer-copyright-text">
           <p>Copyright © 2019 Ahimsa Shivam Yoga Center. All rights reserved.</p>

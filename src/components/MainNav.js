@@ -84,7 +84,7 @@ const Nav = styled.nav`
   }
 
   .menu-btn:checked ~ .menu {
-    max-height: 240px;
+    max-height: 265px;
   }
 
   .menu-btn:checked ~ .menu-icon .navicon {

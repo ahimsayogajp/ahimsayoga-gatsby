@@ -15,7 +15,7 @@ const MasterContainer = styled.section`
   position: relative;
 `
 
-const ContentGrid = styled.div`
+const HeroGrid = styled.div`
   display: grid;
   grid-template-columns: 0.3fr 0.6fr 3.2fr 0.6fr 0.3fr;
   grid-template-rows: auto;
@@ -35,7 +35,7 @@ const HeadingContainer = styled.div`
 
 const HeadingContainerInner = styled.div`
   position: absolute;
-  top: 35%;
+  top: 25%;
   h1, strong {
     color: #fff;
   }
@@ -56,6 +56,21 @@ const Image = styled(Img)`
   z-index: -1;
 `
 
+const ContentGrid = styled.div`
+  display: grid;
+  grid-template-columns: 0.3fr 0.6fr 3.2fr 0.6fr 0.3fr;
+  grid-template-rows: auto;
+  grid-template-areas: "left-gutter left-sidebar center right-sidebar right-gutter";
+  padding-top: 100px;
+  margin-bottom: 70px;
+`
+
+const ContentContainer = styled.div`
+  grid-area: center;
+  font-family: 'Montserrat',sans-serif;
+  font-size: 24px;
+`
+
 const Home = ({ node }) => (
   <MasterContainer>
     <Image
@@ -65,14 +80,25 @@ const Home = ({ node }) => (
         aspectRatio={node.hero.aspectRatio}
         sizes={node.hero.sizes}
     />
-    <ContentGrid>
+    <HeroGrid>
       <HeadingContainer>
         <HeadingContainerInner>
           <strong>{node.welcome}</strong>
           <h1>{node.heading}</h1>
         </HeadingContainerInner>
       </HeadingContainer>
+    </HeroGrid>
+    <ContentGrid>
+      <ContentContainer>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: node.description.childMarkdownRemark.html
+          }}
+        />
+      </ContentContainer>
     </ContentGrid>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12838.985192216147!2d136.6262087!3d36.4395169!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfc3d8bd79e42849d!2sAhimsa+-+Shivam+Yoga+Center!5e0!3m2!1sen!2sjp!4v1546502012340" width="100%" height="395" frameBorder="0" style={{border: "0px"}} allowFullScreen="">
+    </iframe>
   </MasterContainer>
 )
 
@@ -119,6 +145,11 @@ export const pageQuery = graphql`
         }
       }
       welcome
+      description {
+        childMarkdownRemark {
+          html
+        }
+      }
     }
   }
 `

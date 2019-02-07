@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-size: 14px;
     font-family: "Lato",Helvetica,Arial,sans-serif;
-    color: #696969;
+    color: #333;
   }
 `
 
