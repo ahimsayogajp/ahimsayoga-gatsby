@@ -17,6 +17,7 @@ const Container = styled.section`
 
 const Home = ({ node }) => (
   <Container>
+      <Img fixed={node.hero.fixed} />
       {node.heading}
   </Container>
 )
@@ -54,6 +55,14 @@ export const pageQuery = graphql`
       title
       heading
       slug
+      hero {
+        fixed {
+          width
+          height
+          src
+          srcSet
+        }
+      }
     }
   }
 `

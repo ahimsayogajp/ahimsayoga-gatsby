@@ -3,30 +3,7 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 
-// const Nav = styled.nav`
-//   grid-area: center;
-//   display: inline;
-//   line-height: 100px;
-//   font-size: 14px;
-//   font-weight: bold;
-//   ul {
-//     margin: auto;
-//     text-align: center;
-//   }
-//   li {
-//     display: inline;
-//     padding: 1em;
-//   }
-//   a {
-//     color: #333;
-//     text-decoration: none;
-//     &:hover, &[aria-current] {
-//       color: #f76b6a;
-//     }
-//   }
-// `
-
-const Container = styled.nav`
+const Nav = styled.nav`
   grid-area: center;
   display: inline;
   font-size: 14px;
@@ -155,26 +132,10 @@ const Container = styled.nav`
 `
 
 const MainNav = (props) => (
-  // <Nav className="main">
-  //   <ul>
-  //     <li>
-  //       <Link to={'/' + props.locale + '/'}>{props.messages.home}</Link>
-  //     </li>
-  //     <li>
-  //       <Link to={'/' + props.locale + '/about'}>{props.messages.about}</Link>
-  //     </li>
-  //     <li>
-  //       <Link to={'/' + props.locale + '/schedule'}>{props.messages.schedule}</Link>
-  //     </li>
-  //     <li>
-  //       <Link to={'/' + props.locale + '/contact'}>{props.messages.contact}</Link>
-  //     </li>
-  //   </ul>
-  // </Nav>
-  <Container>
-    <input class="menu-btn" type="checkbox" id="menu-btn" />
-    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-    <ul class="menu">
+  <Nav className="main">
+    <input className="menu-btn" type="checkbox" id="menu-btn" />
+    <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
+    <ul className="menu">
       <li>
         <Link to={'/' + props.locale + '/'}>{props.messages.home}</Link>
       </li>
@@ -188,7 +149,7 @@ const MainNav = (props) => (
         <Link to={'/' + props.locale + '/contact'}>{props.messages.contact}</Link>
       </li>
     </ul>
-  </Container>
+  </Nav>
 )
 
 MainNav.propTypes = {

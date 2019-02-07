@@ -34,7 +34,9 @@ const GlobalStyle = createGlobalStyle`
 // Overall Grid: https://www.layoutit.com/grid/ysWOYND
 
 const Container = styled.div`
-  display: grid;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas: "header" "main" "footer";
@@ -42,6 +44,7 @@ const Container = styled.div`
 `
 
 const Main = styled.main`
+  flex-grow: 1;
   grid-area: main;
   display: grid;
   grid-template-columns: 0.3fr 0.6fr 3.2fr 0.6fr 0.3fr;
