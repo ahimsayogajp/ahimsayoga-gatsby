@@ -4,7 +4,8 @@ import { Link, graphql } from 'gatsby'
 import Img from "gatsby-image"
 import styled from "styled-components"
 
-import Layout from "../components/layout"
+import ContentGrid from '../components/layout/ContentGrid';
+import Layout from "../components/layout.js"
 
 const propTypes = {
   data: PropTypes.object.isRequired,
@@ -15,11 +16,7 @@ const MasterContainer = styled.section`
   position: relative;
 `
 
-const HeroGrid = styled.div`
-  display: grid;
-  grid-template-columns: 0.3fr 0.6fr 3.2fr 0.6fr 0.3fr;
-  grid-template-rows: auto;
-  grid-template-areas: "left-gutter left-sidebar center right-sidebar right-gutter";
+const HeroGrid = styled(ContentGrid)`
   position: absolute;
   top: 0;
   left: 0;
@@ -74,11 +71,7 @@ const Image = styled(Img)`
   z-index: -1;
 `
 
-const ContentGrid = styled.div`
-  display: grid;
-  grid-template-columns: 0.3fr 0.6fr 3.2fr 0.6fr 0.3fr;
-  grid-template-rows: auto;
-  grid-template-areas: "left-gutter left-sidebar center right-sidebar right-gutter";
+const MainContentGrid = styled(ContentGrid)`
   padding-top: 100px;
   margin-bottom: 70px;
 `
@@ -108,7 +101,7 @@ const Home = ({ node }) => (
         </HeadingContainerInner>
       </HeadingContainer>
     </HeroGrid>
-    <ContentGrid>
+    <MainContentGrid>
       <ContentContainer>
         <div
           dangerouslySetInnerHTML={{
@@ -116,7 +109,7 @@ const Home = ({ node }) => (
           }}
         />
       </ContentContainer>
-    </ContentGrid>
+    </MainContentGrid>
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12838.985192216147!2d136.6262087!3d36.4395169!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfc3d8bd79e42849d!2sAhimsa+-+Shivam+Yoga+Center!5e0!3m2!1sen!2sjp!4v1546502012340" width="100%" height="395" frameBorder="0" style={{border: "0px"}} allowFullScreen="">
     </iframe>
   </MasterContainer>

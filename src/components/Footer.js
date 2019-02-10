@@ -4,12 +4,10 @@ import Link from 'gatsby-link'
 import styled from 'styled-components'
 import { FaTwitter, FaInstagram, FaYoutube, FaFacebook } from 'react-icons/fa';
 
-const Foot = styled.footer`
+import { ContentGrid, FooterInnerGrid } from '../components/layout/FooterGrid';
+
+const Foot = styled(ContentGrid)`
   grid-area: footer;
-  display: grid;
-  grid-template-columns: 0.3fr 0.6fr 3.2fr 0.6fr 0.3fr;
-  grid-template-rows: auto;
-  grid-template-areas: "left-gutter left-sidebar center right-sidebar right-gutter";
   background: #2c2c2c;
   color: #959595;
 `
@@ -18,11 +16,7 @@ const FooterContent = styled.div`
   grid-area: center;
 `
 
-const CopyrightContainer = styled.div`
-  display: grid;
-  grid-template-columns: 0.7fr 1fr 1.25fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: "copy-left copy-center copy-right";
+const CopyrightContainer = styled(FooterInnerGrid)`
   align-content: space-around;
   min-height: 100px;
   .social-media {

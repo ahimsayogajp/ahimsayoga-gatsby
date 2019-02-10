@@ -55,7 +55,7 @@ const Main = styled.main`
   grid-template-areas: "left-gutter left-sidebar center right-sidebar right-gutter";
 `
 
-class TemplateWrapper extends Component {
+class Layout extends Component {
   constructor(props) {
     super(props);
     this.children = this.props.children;
@@ -103,4 +103,4 @@ class TemplateWrapper extends Component {
   }
 }
 
-export default TemplateWrapper
+export default Layout
