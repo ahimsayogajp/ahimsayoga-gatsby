@@ -42,7 +42,6 @@ const Nav = styled.nav`
   .menu-icon {
     cursor: pointer;
     display: inline-block;
-    float: right;
     padding: 28px 0;
     position: relative;
     user-select: none;
@@ -87,6 +86,10 @@ const Nav = styled.nav`
   .menu-btn:checked ~ .menu {
     max-height: 265px;
     width: 100vw;
+  }
+
+  .menu-btn:checked ~ .menu-icon {
+    float: right;
   }
 
   .menu-btn:checked ~ .menu-icon .navicon {
