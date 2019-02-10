@@ -15,27 +15,26 @@ const MasterContainer = styled.section`
   position: relative;
 `
 
-const HeroGrid = styled.div`
-  display: grid;
-  grid-template-columns: 0.3fr 0.6fr 3.2fr 0.6fr 0.3fr;
-  grid-template-rows: auto;
-  grid-template-areas: "left-gutter left-sidebar center right-sidebar right-gutter";
+const HeroImgContainer = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100%;
 `
 
-const HeadingContainer = styled.div`
+const HeroTxtContainer = styled.div`
+  display: grid;
+  grid-template-columns: 0.3fr 0.6fr 3.2fr 0.6fr 0.3fr;
+  grid-template-rows: auto;
+  grid-template-areas: "left-gutter left-sidebar center right-sidebar right-gutter";
+  width: 100vw;
+`
+
+const HeroTxtContainerInner = styled.div`
+  position: relative;
+  top: 50%;
   grid-area: center;
   align-items: center;
-  position: relative;
-`
-
-const HeadingContainerInner = styled.div`
-  position: absolute;
-  top: 25%;
   h1, strong {
     color: #fff;
   }
@@ -75,21 +74,21 @@ const ContentContainer = styled.div`
 
 const Home = ({ node }) => (
   <MasterContainer>
-    <Image
-        key={node.hero.fluid.src}
-        alt={node.hero.title}
-        fluid={node.hero.fluid}
-        aspectRatio={node.hero.aspectRatio}
-        sizes={node.hero.sizes}
-    />
-    <HeroGrid>
-      <HeadingContainer>
-        <HeadingContainerInner>
-          <strong>{node.welcome}</strong>
-          <h1>{node.heading}</h1>
-        </HeadingContainerInner>
-      </HeadingContainer>
-    </HeroGrid>
+    <HeroImgContainer>
+      <Image
+          key={node.hero.fluid.src}
+          alt={node.hero.title}
+          fluid={node.hero.fluid}
+          aspectRatio={node.hero.aspectRatio}
+          sizes={node.hero.sizes}
+      />
+    </HeroImgContainer>
+    <HeroTxtContainer>
+      <HeroTxtContainerInner>
+        <strong>{node.welcome}</strong>
+        <h1>{node.heading}</h1>
+      </HeroTxtContainerInner>
+    </HeroTxtContainer>
     <ContentGrid>
       <ContentContainer>
         <div

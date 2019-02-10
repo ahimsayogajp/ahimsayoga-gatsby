@@ -47,6 +47,7 @@ const Nav = styled.nav`
     position: relative;
     user-select: none;
     margin-top: 20px;
+    padding-right: 20px;
   }
 
   .menu-icon .navicon {
@@ -85,6 +86,7 @@ const Nav = styled.nav`
 
   .menu-btn:checked ~ .menu {
     max-height: 265px;
+    width: 100vw;
   }
 
   .menu-btn:checked ~ .menu-icon .navicon {
@@ -104,7 +106,7 @@ const Nav = styled.nav`
     top: 0;
   }
 
-  /* 48em = 768px */
+  /* Eg. 48em = 768px */
 
   @media (min-width: 58em) {
     ul {

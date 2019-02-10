@@ -12,23 +12,36 @@ const Head = styled.header`
   display: grid;
   grid-template-columns: 0.3fr 0.7fr 3fr 0.7fr 0.3fr;;
   grid-template-rows: auto;
-  grid-template-areas: "left-gutter logo nav lang right-gutter";
+  grid-template-areas: "left-gutter left center right right-gutter";
   box-shadow: 0 1px 5px rgba(0,0,0,0.46);
   font-family: 'Montserrat',sans-serif;
   text-transform: uppercase;
 `
 
 const Logo = styled.div`
-  grid-area: logo;
-  padding-top: 10px;
+  grid-area: center;
+  padding-top: 20px;
+  text-align: center;
+  img {
+    max-height: 55px;
+  }
+  @media (min-width: 58em) {
+    grid-area: left;
+    img {
+      max-height: 65px;
+    }
+  }
 `
 
 const NavContainer = styled.div`
-  grid-area: nav;
+  grid-area: left;
+  @media (min-width: 58em) {
+    grid-area: center;
+  }
 `
 
 const LangContainer = styled.div`
-  grid-area: lang;
+  grid-area: right;
 `
 
 const Header = (props) => (
