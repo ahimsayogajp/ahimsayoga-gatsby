@@ -43,7 +43,6 @@ const Container = styled.div`
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas: "header" "main" "footer";
-  font-family: "Lato",Helvetica,Arial,sans-serif;
 `
 
 const Main = styled.main`
@@ -85,7 +84,9 @@ class Layout extends Component {
               { name: 'keywords', content: 'ヨガ, ヨガ教室, ヨガ能美市, ヨガ金沢' },
             ]}
             link={[
-              { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }
+              { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` },
+              { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Alex+Brush' },
+              { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Montserrat' }
             ]}
           />
           <Header langs={this.langsMenu} locale={this.langKey} messages={this.i18nMessages} />
