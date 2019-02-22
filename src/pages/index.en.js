@@ -39,7 +39,7 @@ const HeadingContainerInner = styled.div`
     color: #fff;
   }
   strong {
-    font-family: Alex Brush;
+    font-family: 'Alex Brush';
     font-weight: 400;
     font-style: normal;
     font-size: 24px;

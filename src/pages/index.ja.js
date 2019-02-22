@@ -39,13 +39,14 @@ const HeadingContainerInner = styled.div`
     color: #fff;
   }
   strong {
-    font-family: Alex Brush;
+    font-family: 'Hannari';
     font-weight: 400;
     font-style: normal;
     font-size: 24px;
   }
   h1 {
     font-size: 28px;
+    font-family: 'Noto Sans JP';
   }
   @media ${device.mobileL} {
     top: 7%;
