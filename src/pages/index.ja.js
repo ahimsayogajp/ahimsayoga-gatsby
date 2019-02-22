@@ -4,8 +4,10 @@ import { Link, graphql } from 'gatsby'
 import Img from "gatsby-image"
 import styled from "styled-components"
 
-import ContentGrid from '../components/layout/ContentGrid';
+import ContentGrid from '../components/layout/ContentGrid'
 import Layout from "../components/layout.js"
+
+import { device } from '../device'
 
 const propTypes = {
   data: PropTypes.object.isRequired,
@@ -32,7 +34,7 @@ const HeadingContainer = styled.div`
 
 const HeadingContainerInner = styled.div`
   position: absolute;
-  top: 5%;
+  top: 4%;
   h1, strong {
     color: #fff;
   }
@@ -45,23 +47,37 @@ const HeadingContainerInner = styled.div`
   h1 {
     font-size: 28px;
   }
-  @media (min-width: 35em) {
-    top: 15%;
+  @media ${device.mobileL} {
+    top: 7%;
+  }
+
+  @media ${device.tablet} {
+    top: 10%;
     strong {
-      font-size: 28px;
+      font-size: 30px;
     }
     h1 {
-    font-size: 43px;
-  }
-  }
-  @media (min-width: 65em) {
-    top: 25%;
-    strong {
       font-size: 34px;
     }
-    h1 {
-    font-size: 48px;
   }
+
+  @media ${device.laptop} {
+    top: 17%;
+    strong {
+      font-size: 33px;
+    }
+    h1 {
+      font-size: 38px;
+    }
+  }
+  @media ${device.laptopL} {
+    top: 20%;
+    strong {
+      font-size: 36px;
+    }
+    h1 {
+      font-size: 42px;
+    }
   }
 `
 
@@ -87,11 +103,11 @@ const ContentContainer = styled.div`
 const Home = ({ node }) => (
   <MasterContainer>
     <Image
-        key={node.hero.fluid.src}
-        alt={node.hero.title}
-        fluid={node.hero.fluid}
-        aspectRatio={node.hero.aspectRatio}
-        sizes={node.hero.sizes}
+      key={node.hero.fluid.src}
+      alt={node.hero.title}
+      fluid={node.hero.fluid}
+      aspectRatio={node.hero.aspectRatio}
+      sizes={node.hero.sizes}
     />
     <HeroGrid>
       <HeadingContainer>

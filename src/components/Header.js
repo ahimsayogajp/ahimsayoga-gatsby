@@ -1,12 +1,14 @@
 import React from 'react'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 
-import SelectLanguage from './SelectLanguage';
+import SelectLanguage from './SelectLanguage'
 import MainNav from './MainNav'
-import HeaderGrid from './layout/HeaderGrid';
-import logo from '../images/logo.png';
+import HeaderGrid from './layout/HeaderGrid'
+import logo from '../images/logo.png'
+
+import { device } from '../device'
 
 
 const Head = styled(HeaderGrid)`
@@ -23,7 +25,7 @@ const Logo = styled.div`
   img {
     max-height: 55px;
   }
-  @media (min-width: 58em) {
+  @media ${device.laptop} {
     grid-area: left;
     img {
       max-height: 65px;
@@ -33,7 +35,7 @@ const Logo = styled.div`
 
 const NavContainer = styled.div`
   grid-area: left;
-  @media (min-width: 58em) {
+  @media ${device.laptop} {
     grid-area: center;
   }
 `

@@ -1,7 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
+
+import { device } from '../device'
 
 const Nav = styled.nav`
   grid-area: center;
@@ -109,9 +111,7 @@ const Nav = styled.nav`
     top: 0;
   }
 
-  /* Eg. 48em = 768px */
-
-  @media (min-width: 58em) {
+  @media ${device.laptop} {
     ul {
       margin: auto;
       text-align: center;

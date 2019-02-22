@@ -34,6 +34,9 @@ const CopyrightContainer = styled(FooterInnerGrid)`
   a {
     color: #cccccc;
     margin-right: 2em;
+    &:hover {
+      color: #fff;
+    }
   }
 `
 

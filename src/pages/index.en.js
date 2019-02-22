@@ -4,8 +4,10 @@ import { Link, graphql } from 'gatsby'
 import Img from "gatsby-image"
 import styled from "styled-components"
 
-import ContentGrid from '../components/layout/ContentGrid';
+import ContentGrid from '../components/layout/ContentGrid'
 import Layout from "../components/layout.js"
+
+import { device } from '../device'
 
 const propTypes = {
   data: PropTypes.object.isRequired,
@@ -16,22 +18,23 @@ const MasterContainer = styled.section`
   position: relative;
 `
 
-const HeroImgContainer = styled.div`
+const HeroGrid = styled(ContentGrid)`
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
+  height: 100%;
 `
 
-const HeroTxtContainer = styled(ContentGrid)`
-  width: 100vw;
-`
-
-const HeroTxtContainerInner = styled.div`
-  position: relative;
-  top: 50%;
+const HeadingContainer = styled.div`
   grid-area: center;
   align-items: center;
+  position: relative;
+`
+
+const HeadingContainerInner = styled.div`
+  position: absolute;
+  top: 4%;
   h1, strong {
     color: #fff;
   }
@@ -39,10 +42,42 @@ const HeroTxtContainerInner = styled.div`
     font-family: Alex Brush;
     font-weight: 400;
     font-style: normal;
-    font-size: 34px;
+    font-size: 24px;
   }
   h1 {
-    font-size: 48px;
+    font-size: 28px;
+  }
+  @media ${device.mobileL} {
+    top: 7%;
+  }
+
+  @media ${device.tablet} {
+    top: 10%;
+    strong {
+      font-size: 30px;
+    }
+    h1 {
+      font-size: 34px;
+    }
+  }
+
+  @media ${device.laptop} {
+    top: 17%;
+    strong {
+      font-size: 33px;
+    }
+    h1 {
+      font-size: 38px;
+    }
+  }
+  @media ${device.laptopL} {
+    top: 20%;
+    strong {
+      font-size: 36px;
+    }
+    h1 {
+      font-size: 42px;
+    }
   }
 `
 
@@ -67,21 +102,21 @@ const ContentContainer = styled.div`
 
 const Home = ({ node }) => (
   <MasterContainer>
-    <HeroImgContainer>
-      <Image
-          key={node.hero.fluid.src}
-          alt={node.hero.title}
-          fluid={node.hero.fluid}
-          aspectRatio={node.hero.aspectRatio}
-          sizes={node.hero.sizes}
-      />
-    </HeroImgContainer>
-    <HeroTxtContainer>
-      <HeroTxtContainerInner>
-        <strong>{node.welcome}</strong>
-        <h1>{node.heading}</h1>
-      </HeroTxtContainerInner>
-    </HeroTxtContainer>
+    <Image
+      key={node.hero.fluid.src}
+      alt={node.hero.title}
+      fluid={node.hero.fluid}
+      aspectRatio={node.hero.aspectRatio}
+      sizes={node.hero.sizes}
+    />
+    <HeroGrid>
+      <HeadingContainer>
+        <HeadingContainerInner>
+          <strong>{node.welcome}</strong>
+          <h1>{node.heading}</h1>
+        </HeadingContainerInner>
+      </HeadingContainer>
+    </HeroGrid>
     <MainContentGrid>
       <ContentContainer>
         <div
