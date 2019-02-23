@@ -23,7 +23,7 @@ const HeadingContainer = styled.div`
 
 const HeadingContainerInner = styled.div`
   position: absolute;
-  top: 5em;
+  top: 3em;
   h1, strong {
     color: #fff;
   }
@@ -31,11 +31,21 @@ const HeadingContainerInner = styled.div`
     font-family: ${props => (props.locale == 'ja') ? 'Hannari' : 'Alex Brush'};
     font-weight: 400;
     font-style: normal;
-    font-size: 20px;
+    font-size: 16px;
   }
   h1 {
-    font-size: 24px;
+    font-size: 17px;
     font-family: ${props => (props.locale == 'ja') ? 'Noto Sans JP' : 'inherit'};
+  }
+
+  @media ${device.mobileM} {
+    top: 5em;
+    strong {
+      font-size: 20px;
+    }
+    h1 {
+      font-size: 24px;
+    }
   }
 
   @media ${device.mobileL} {
