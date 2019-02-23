@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 
-import { device } from '../device'
+import { device } from '../breakpoints'
 
 const Nav = styled.nav`
   grid-area: center;
