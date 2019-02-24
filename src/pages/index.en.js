@@ -17,10 +17,6 @@ const propTypes = {
 const MasterContainer = styled.section`
   width: 100vw;
   position: relative;
-
-  iframe {
-    z-index: 100;
-  }
 `
 
 const MainContentGrid = styled(ContentGrid)`
@@ -34,6 +30,11 @@ const ContentContainer = styled.div`
   font-size: 24px;
   padding-bottom: 75px;
   border-bottom: 1px solid #eee;
+
+  .description{
+    color: #333;
+    text-align: center;
+  }
 `
 
 const Home = ({ node }) => (
@@ -41,7 +42,7 @@ const Home = ({ node }) => (
     <Hero hero={node.hero} welcome={node.welcome} heading={node.heading} locale={node.node_locale} />
     <MainContentGrid>
       <ContentContainer>
-        <div
+        <div className="description"
           dangerouslySetInnerHTML={{
             __html: node.description.childMarkdownRemark.html
           }}
