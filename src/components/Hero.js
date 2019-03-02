@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Img from "gatsby-image"
 
-import ContentGrid from '../components/layout/ContentGrid'
+import { ContentGrid } from '../components/layout/ContentGrid'
 
 import { device } from '../breakpoints'
 

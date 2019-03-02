@@ -3,6 +3,7 @@ import * as PropTypes from "prop-types"
 import { Link, graphql } from 'gatsby'
 import Img from "gatsby-image"
 
+import { ContentGrid, ContentContainer } from '../components/layout/ContentGrid'
 import Layout from "../components/layout.js"
 
 const propTypes = {
@@ -14,10 +15,12 @@ class AboutTemplate extends React.Component {
     const data = this.props.data;
     return (
       <Layout data={this.props.data} location={this.props.location}>
-        <div>
-          <h1>{data.contentfulAbout.heading}</h1>
-          <span>Some ABOUT detail...</span>
-        </div>
+        <ContentGrid>
+          <ContentContainer>
+            <h1>{data.contentfulAbout.heading}</h1>
+            <span>Some ABOUT detail...</span>
+          </ContentContainer>
+        </ContentGrid>
       </Layout>
     )
   }

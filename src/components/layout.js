@@ -86,16 +86,14 @@ class Layout extends Component {
             link={[
               { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` },
               { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Alex+Brush' },
-              { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Montserrat' },
+              { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,700' },
               { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/earlyaccess/hannari.css' },
               { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Noto+Sans+JP' }
             ]}
           />
           <Header langs={this.langsMenu} locale={this.langKey} messages={this.i18nMessages} />
           <Main>
-            <ContentGrid>
-              {this.children}
-            </ContentGrid>
+            {this.children}
           </Main>
           <Footer langs={this.langsMenu} locale={this.langKey} messages={this.i18nMessages} />
         </Container>

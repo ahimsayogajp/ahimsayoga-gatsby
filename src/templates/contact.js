@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby'
 import Img from "gatsby-image"
 import styled from "styled-components"
 
-import ContentGrid from '../components/layout/ContentGrid'
+import { ContentGrid } from '../components/layout/ContentGrid'
 import Layout from "../components/layout.js"
 
 const propTypes = {

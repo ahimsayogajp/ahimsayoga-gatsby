@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby'
 import Img from "gatsby-image"
 import styled from "styled-components"
 
-import ContentGrid from '../components/layout/ContentGrid'
+import { ContentGrid, ContentContainer } from '../components/layout/ContentGrid'
 import Layout from "../components/layout"
 import Hero from '../components/Hero'
 
@@ -24,17 +24,11 @@ const MainContentGrid = styled(ContentGrid)`
   margin-bottom: 70px;
 `
 
-const ContentContainer = styled.div`
-  grid-area: center;
-  font-family: 'Montserrat',sans-serif;
-  font-size: 24px;
+const Statement = styled.div`
+  color: #333;
+  text-align: center;
   padding-bottom: 75px;
   border-bottom: 1px solid #eee;
-
-  .description{
-    color: #333;
-    text-align: center;
-  }
 `
 
 const Home = ({ node }) => (
@@ -42,7 +36,7 @@ const Home = ({ node }) => (
     <Hero hero={node.hero} welcome={node.welcome} heading={node.heading} locale={node.node_locale} />
     <MainContentGrid>
       <ContentContainer>
-        <div className="description"
+        <Statement
           dangerouslySetInnerHTML={{
             __html: node.description.childMarkdownRemark.html
           }}

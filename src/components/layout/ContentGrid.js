@@ -8,4 +8,10 @@ const ContentGrid = styled.div`
   grid-template-areas: "left-gutter left-sidebar center right-sidebar right-gutter";
 `
 
-export default ContentGrid;
+const ContentContainer = styled.div`
+  grid-area: center;
+  font-family: 'Montserrat',sans-serif;
+  font-size: 24px;
+`
+
+export { ContentGrid, ContentContainer };
