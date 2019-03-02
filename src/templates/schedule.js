@@ -3,7 +3,7 @@ import * as PropTypes from "prop-types"
 import { Link, graphql } from 'gatsby'
 import Img from "gatsby-image"
 
-import Layout from "../components/layout.js"
+import Layout from "../components/layout"
 
 const propTypes = {
   data: PropTypes.object.isRequired,

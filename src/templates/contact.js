@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 
 import { ContentGrid } from '../components/layout/ContentGrid'
-import Layout from "../components/layout.js"
+import Layout from "../components/layout"
 
 const propTypes = {
   data: PropTypes.object.isRequired,
