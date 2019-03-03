@@ -19,7 +19,6 @@ class AboutTemplate extends React.Component {
         <Banner banner={data.contentfulAbout.banner} heading={data.contentfulAbout.heading} locale={data.contentfulAbout.node_locale} />
         <ContentGrid>
           <ContentContainer>
-            <h1>{data.contentfulAbout.heading}</h1>
             <span>Some ABOUT detail...</span>
           </ContentContainer>
         </ContentGrid>

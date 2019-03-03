@@ -7,6 +7,10 @@ import { ContentGrid } from '../components/layout/ContentGrid'
 
 import { device } from '../breakpoints'
 
+const RelativeContainer = styled.div`
+  position: relative;
+`
+
 const HeroGrid = styled(ContentGrid)`
   position: absolute;
   top: 0;
@@ -95,7 +99,7 @@ const Image = styled(Img)`
 `
 
 const Hero = (props) => (
-  <div>
+  <RelativeContainer>
     <Image
       key={props.hero.fluid.src}
       alt={props.hero.title}
@@ -111,7 +115,7 @@ const Hero = (props) => (
         </HeadingContainerInner>
       </HeadingContainer>
     </HeroGrid>
-  </div>
+  </RelativeContainer>
 )
 
 Hero.propTypes = {

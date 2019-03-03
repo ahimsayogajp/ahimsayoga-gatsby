@@ -7,6 +7,10 @@ import { ContentGrid } from '../components/layout/ContentGrid'
 
 import { device } from '../breakpoints'
 
+const RelativeContainer = styled.div`
+  position: relative;
+`
+
 const BannerGrid = styled(ContentGrid)`
   position: absolute;
   top: 0;
@@ -23,19 +27,37 @@ const HeadingContainer = styled.div`
 
 const HeadingContainerInner = styled.div`
   position: absolute;
-  top: 2em;
-  h1, strong {
+  top: 0.5em;
+  left: 50%;
+  margin-left: -50px;
+  h1, strong, a, div {
     color: #fff;
   }
   strong {
-    font-size: ${props => (props.locale == 'ja') ? '15px' : '14px'};
+    font-size: ${props => (props.locale == 'ja') ? '30px' : '28px'};
     font-family: ${props => (props.locale == 'ja') ? 'Hannari' : 'Alex Brush'};
     font-weight: 400;
     font-style: normal;
   }
   h1 {
-    font-size: ${props => (props.locale == 'ja') ? '16px' : '15px'};
+    font-size: ${props => (props.locale == 'ja') ? '30px' : '28px'};
     font-family: ${props => (props.locale == 'ja') ? 'Noto Sans JP' : 'inherit'};
+  }
+  a, div {
+    text-transform: uppercase;
+    display: inline-block;
+    .root {
+      padding-right: 10px;
+    }
+    .child {
+      padding-left: 10px;
+    }
+  }
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   @media ${device.mobileM} {
@@ -95,7 +117,7 @@ const Image = styled(Img)`
 `
 
 const Banner = (props) => (
-  <div>
+  <RelativeContainer>
     <Image
       key={props.banner.fluid.src}
       alt={props.banner.title}
@@ -110,17 +132,17 @@ const Banner = (props) => (
           <nav>
             <div itemScope itemType="http://data-vocabulary.org/Breadcrumb">
               <a href="/" itemProp="url">
-                <span itemProp="title">Home</span>
+                <span class="root" itemProp="title">Home</span>
               </a> /
               <div itemProp="child" itemScope itemType="http://data-vocabulary.org/Breadcrumb">
-                <span itemProp="title">{props.heading}</span>
+                <span class="child" itemProp="title">{props.heading}</span>
               </div>
             </div>
           </nav>
         </HeadingContainerInner>
       </HeadingContainer>
     </BannerGrid>
-  </div>
+  </RelativeContainer>
 )
 
 Banner.propTypes = {

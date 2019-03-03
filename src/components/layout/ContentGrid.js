@@ -12,6 +12,8 @@ const ContentContainer = styled.div`
   grid-area: center;
   font-family: 'Montserrat',sans-serif;
   font-size: 24px;
+  padding-top: 136px;
+  margin-bottom: 70px;
 `
 
 export { ContentGrid, ContentContainer };
