@@ -29,7 +29,7 @@ const HeadingContainerInner = styled.div`
   position: absolute;
   top: 0.5em;
   left: 50%;
-  margin-left: -50px;
+  margin-left: -50%;
   h1, strong, a, div {
     color: #fff;
   }

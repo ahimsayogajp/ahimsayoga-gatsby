@@ -32,6 +32,12 @@ const GlobalStyle = createGlobalStyle`
   h1 {
     margin-block-start: 0;
   }
+  a {
+    color: #222;
+    &:hover {
+      color: #f76b6a;
+    }
+  }
 `
 
 // Overall Grid: https://www.layoutit.com/grid/ysWOYND

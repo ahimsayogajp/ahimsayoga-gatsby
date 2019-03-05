@@ -19,6 +19,7 @@ const Statement = styled.div`
   text-align: center;
   padding-bottom: 75px;
   border-bottom: 1px solid #eee;
+  font-size: 24px;
 `
 
 const Home = ({ node }) => (
@@ -28,7 +29,7 @@ const Home = ({ node }) => (
       <ContentContainer>
         <Statement
           dangerouslySetInnerHTML={{
-            __html: node.description.childMarkdownRemark.html
+            __html: node.body.childMarkdownRemark.html
           }}
         />
       </ContentContainer>
@@ -81,7 +82,7 @@ export const pageQuery = graphql`
         }
       }
       welcome
-      description {
+      body {
         childMarkdownRemark {
           html
         }
