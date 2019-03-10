@@ -121,7 +121,8 @@ const Hero = (props) => (
 Hero.propTypes = {
   hero: PropTypes.object,
   welcome: PropTypes.string,
-  heading: PropTypes.string
+  heading: PropTypes.string,
+  locale: PropTypes.string
 }
 
 export default Hero;

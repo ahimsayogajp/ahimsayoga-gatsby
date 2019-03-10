@@ -7,6 +7,7 @@ import styled from "styled-components"
 import { ContentGrid, ContentContainer } from '../components/layout/ContentGrid'
 import Layout from "../components/layout"
 import Hero from '../components/Hero'
+import Promo from '../components/Promo'
 
 import { device } from '../breakpoints'
 
@@ -32,6 +33,11 @@ const Home = ({ node }) => (
             __html: node.body.childMarkdownRemark.html
           }}
         />
+        <Promo promoTitle={node.promoTitle}
+          promoIntro={node.promoIntro}
+          promoCta={node.promoCta}
+          promoUri={node.promoUri}
+          locale={node.node_locale} />
       </ContentContainer>
     </ContentGrid>
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12838.985192216147!2d136.6262087!3d36.4395169!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfc3d8bd79e42849d!2sAhimsa+-+Shivam+Yoga+Center!5e0!3m2!1sen!2sjp!4v1550923626087" width="100%" height="395" frameBorder="0" style={{border: "0"}} allowFullScreen>
@@ -87,6 +93,10 @@ export const pageQuery = graphql`
           html
         }
       }
+      promoTitle
+      promoIntro
+      promoCta
+      promoUri
     }
   }
 `

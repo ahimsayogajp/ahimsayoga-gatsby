@@ -147,7 +147,8 @@ const Banner = (props) => (
 
 Banner.propTypes = {
   banner: PropTypes.object,
-  heading: PropTypes.string
+  heading: PropTypes.string,
+  locale: PropTypes.string
 }
 
 export default Banner;
