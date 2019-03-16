@@ -23,6 +23,10 @@ const Statement = styled.div`
   font-size: 24px;
 `
 
+const Schedule = styled.div`
+  text-align: center;
+`
+
 const Home = ({ node }) => (
   <section>
     <Hero hero={node.hero} welcome={node.welcome} heading={node.heading} locale={node.node_locale} />
@@ -31,6 +35,10 @@ const Home = ({ node }) => (
         <Statement
           dangerouslySetInnerHTML={{
             __html: node.body.childMarkdownRemark.html
+          }}
+        />
+        <Schedule dangerouslySetInnerHTML={{
+            __html: node.schedule.childMarkdownRemark.html
           }}
         />
         <Promo promoTitle={node.promoTitle}
@@ -89,6 +97,11 @@ export const pageQuery = graphql`
       }
       welcome
       body {
+        childMarkdownRemark {
+          html
+        }
+      }
+      schedule {
         childMarkdownRemark {
           html
         }

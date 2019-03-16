@@ -32,6 +32,9 @@ const GlobalStyle = createGlobalStyle`
   h1 {
     margin-block-start: 0;
   }
+  h3 {
+    color: #333;
+  }
   a {
     color: #222;
     &:hover {
