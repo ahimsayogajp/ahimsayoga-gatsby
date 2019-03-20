@@ -14,12 +14,36 @@ const propTypes = {
 class AboutTemplate extends React.Component {
   render() {
     const data = this.props.data;
+    const instructors = data.contentfulAbout.instructors;
     return (
       <Layout data={this.props.data} location={this.props.location}>
         <Banner banner={data.contentfulAbout.banner} heading={data.contentfulAbout.heading} locale={data.contentfulAbout.node_locale} />
         <ContentGrid>
           <ContentContainer>
-            <span>Some ABOUT detail...</span>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.contentfulAbout.body.childMarkdownRemark.html
+              }}
+            />
+            <div>
+              {instructors.map((instructor) =>
+                <div key={instructor.name}>
+                  <h2>{instructor.name}</h2>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: instructor.bio.childMarkdownRemark.html
+                    }}
+                  />
+                  <Img
+                    key={instructor.photo.fluid.src}
+                    alt={instructor.photo.title}
+                    fluid={instructor.photo.fluid}
+                    aspectRatio={instructor.photo.aspectRatio}
+                    sizes={instructor.photo.sizes}
+                  />
+                </div>
+              )}
+            </div>
           </ContentContainer>
         </ContentGrid>
       </Layout>
@@ -51,6 +75,27 @@ export const pageQuery = graphql`
           srcSet
           aspectRatio
           sizes
+        }
+      }
+      body {
+        childMarkdownRemark {
+          html
+        }
+      }
+      instructors {
+        name
+        photo {
+          fluid {
+            src
+            srcSet
+            aspectRatio
+            sizes
+          }
+        }
+        bio {
+          childMarkdownRemark {
+            html
+          }
         }
       }
       node_locale

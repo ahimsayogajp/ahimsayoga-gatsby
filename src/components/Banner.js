@@ -132,10 +132,10 @@ const Banner = (props) => (
           <nav>
             <div itemScope itemType="http://data-vocabulary.org/Breadcrumb">
               <a href="/" itemProp="url">
-                <span class="root" itemProp="title">Home</span>
+                <span className="root" itemProp="title">Home</span>
               </a> /
               <div itemProp="child" itemScope itemType="http://data-vocabulary.org/Breadcrumb">
-                <span class="child" itemProp="title">{props.heading}</span>
+                <span className="child" itemProp="title">{props.heading}</span>
               </div>
             </div>
           </nav>
