@@ -19,6 +19,35 @@ const Welcome = styled.div`
   margin-bottom: 6px;
 `
 
+const SectionTitle = styled.h2`
+  margin-top: 80px;
+`
+
+const InstructorsContainer = styled(ContentContainer)`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 2rem;
+  padding-top: 20px;
+`
+
+const ProfileContainer = styled.div`
+  position: relative;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding-top: 30px;
+`
+
+const Profile = styled.div`
+  max-width: 60%;
+  margin: auto;
+  text-align: center;
+`
+
+const Image = styled(Img)`
+  border-radius: 100%;
+`
+
 const About = ({ node }) => (
   <section>
     <Banner banner={node.banner} heading={node.heading} locale={node.node_locale} />
@@ -30,25 +59,28 @@ const About = ({ node }) => (
             __html: node.body.childMarkdownRemark.html
           }}
         />
-        <div>
+        <SectionTitle>{node.instructorSectionTitle}</SectionTitle>
+        <InstructorsContainer>
           {node.instructors.map((instructor) =>
-            <div key={instructor.name}>
-              <h2>{instructor.name}</h2>
+            <ProfileContainer key={instructor.name}>
               {/* <div
                 dangerouslySetInnerHTML={{
                   __html: instructor.bio.childMarkdownRemark.html
                 }}
               /> */}
-              <Img
-                key={instructor.photo.fluid.src}
-                alt={instructor.photo.title}
-                fluid={instructor.photo.fluid}
-                aspectRatio={instructor.photo.aspectRatio}
-                sizes={instructor.photo.sizes}
-              />
-            </div>
+              <Profile>
+                <Image
+                  key={instructor.photo.fluid.src}
+                  alt={instructor.photo.title}
+                  fluid={instructor.photo.fluid}
+                  aspectRatio={instructor.photo.aspectRatio}
+                  sizes={instructor.photo.sizes}
+                />
+                <h3>{instructor.name}</h3>
+              </Profile>
+            </ProfileContainer>
           )}
-        </div>
+        </InstructorsContainer>
       </ContentContainer>
     </ContentGrid>
   </section>
@@ -97,6 +129,7 @@ export const pageQuery = graphql`
           html
         }
       }
+      instructorSectionTitle
       instructors {
         name
         photo {
