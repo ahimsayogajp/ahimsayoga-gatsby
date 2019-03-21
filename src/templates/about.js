@@ -2,6 +2,7 @@ import React from "react"
 import * as PropTypes from "prop-types"
 import { Link, graphql } from 'gatsby'
 import Img from "gatsby-image"
+import styled from "styled-components"
 
 import { ContentGrid, ContentContainer } from '../components/layout/ContentGrid'
 import Layout from "../components/layout"
@@ -11,41 +12,54 @@ const propTypes = {
   data: PropTypes.object.isRequired,
 }
 
+const Welcome = styled.div`
+  font-size: 34px;
+  font-family: 'Alex Brush';
+  color: #f76b6a;
+  margin-bottom: 6px;
+`
+
+const About = ({ node }) => (
+  <section>
+    <Banner banner={node.banner} heading={node.heading} locale={node.node_locale} />
+    <ContentGrid>
+      <ContentContainer>
+        <Welcome>{node.welcome}</Welcome>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: node.body.childMarkdownRemark.html
+          }}
+        />
+        <div>
+          {node.instructors.map((instructor) =>
+            <div key={instructor.name}>
+              <h2>{instructor.name}</h2>
+              {/* <div
+                dangerouslySetInnerHTML={{
+                  __html: instructor.bio.childMarkdownRemark.html
+                }}
+              /> */}
+              <Img
+                key={instructor.photo.fluid.src}
+                alt={instructor.photo.title}
+                fluid={instructor.photo.fluid}
+                aspectRatio={instructor.photo.aspectRatio}
+                sizes={instructor.photo.sizes}
+              />
+            </div>
+          )}
+        </div>
+      </ContentContainer>
+    </ContentGrid>
+  </section>
+)
+
 class AboutTemplate extends React.Component {
   render() {
     const data = this.props.data;
-    const instructors = data.contentfulAbout.instructors;
     return (
       <Layout data={this.props.data} location={this.props.location}>
-        <Banner banner={data.contentfulAbout.banner} heading={data.contentfulAbout.heading} locale={data.contentfulAbout.node_locale} />
-        <ContentGrid>
-          <ContentContainer>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: data.contentfulAbout.body.childMarkdownRemark.html
-              }}
-            />
-            <div>
-              {instructors.map((instructor) =>
-                <div key={instructor.name}>
-                  <h2>{instructor.name}</h2>
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: instructor.bio.childMarkdownRemark.html
-                    }}
-                  />
-                  <Img
-                    key={instructor.photo.fluid.src}
-                    alt={instructor.photo.title}
-                    fluid={instructor.photo.fluid}
-                    aspectRatio={instructor.photo.aspectRatio}
-                    sizes={instructor.photo.sizes}
-                  />
-                </div>
-              )}
-            </div>
-          </ContentContainer>
-        </ContentGrid>
+        <About node={this.props.data.contentfulAbout}></About>
       </Layout>
     )
   }
@@ -77,6 +91,7 @@ export const pageQuery = graphql`
           sizes
         }
       }
+      welcome
       body {
         childMarkdownRemark {
           html

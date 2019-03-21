@@ -12,27 +12,41 @@ const propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-const Schedule = styled.div`
+const Welcome = styled.div`
+  font-size: 34px;
+  font-family: 'Alex Brush';
+  color: #f76b6a;
+  margin-bottom: 6px;
+`
+
+const Timetable = styled.div`
   hr {
     margin: 80px 0;
   }
 `
+
+const Schedule = ({ node }) => (
+  <section>
+    <Banner banner={node.banner} heading={node.heading} locale={node.node_locale} />
+    <ContentGrid>
+      <ContentContainer>
+        <Welcome>{node.welcome}</Welcome>
+        <Timetable
+          dangerouslySetInnerHTML={{
+            __html: node.body.childMarkdownRemark.html
+          }}
+        />
+      </ContentContainer>
+    </ContentGrid>
+  </section>
+)
 
 class ScheduleTemplate extends React.Component {
   render() {
     const data = this.props.data;
     return (
       <Layout data={this.props.data} location={this.props.location}>
-        <Banner banner={data.contentfulSchedule.banner} heading={data.contentfulSchedule.heading} locale={data.contentfulSchedule.node_locale} />
-        <ContentGrid>
-          <ContentContainer>
-            <Schedule
-              dangerouslySetInnerHTML={{
-                __html: data.contentfulSchedule.body.childMarkdownRemark.html
-              }}
-            />
-          </ContentContainer>
-        </ContentGrid>
+        <Schedule node={this.props.data.contentfulSchedule}></Schedule>
       </Layout>
     )
   }
@@ -64,6 +78,7 @@ export const pageQuery = graphql`
           sizes
         }
       }
+      welcome
       body {
         childMarkdownRemark {
           html
