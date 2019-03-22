@@ -59,7 +59,7 @@ const About = ({ node }) => (
             __html: node.body.childMarkdownRemark.html
           }}
         />
-        <SectionTitle>{node.instructorSectionTitle}</SectionTitle>
+        <SectionTitle>{node.instructorsHeading}</SectionTitle>
         <InstructorsContainer>
           {node.instructors.map((instructor) =>
             <ProfileContainer key={instructor.name}>
@@ -129,7 +129,7 @@ export const pageQuery = graphql`
           html
         }
       }
-      instructorSectionTitle
+      instructorsHeading
       instructors {
         name
         photo {

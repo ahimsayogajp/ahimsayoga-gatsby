@@ -1,7 +1,6 @@
 import React from "react"
 import * as PropTypes from "prop-types"
 import { Link, graphql } from 'gatsby'
-import Img from "gatsby-image"
 import styled from "styled-components"
 
 import { ContentGrid, ContentContainer } from '../components/layout/ContentGrid'
@@ -15,6 +14,12 @@ const propTypes = {
   data: PropTypes.object.isRequired,
 }
 
+const HomeContainer = styled.section`
+  background: ${props => `url(${props.background}) no-repeat`};
+  background-position: 12% 72%;
+  background-size: 35% auto;
+`
+
 const Statement = styled.div`
   color: #333;
   text-align: center;
@@ -23,12 +28,21 @@ const Statement = styled.div`
   font-size: 24px;
 `
 
+const Welcome = styled.div`
+  font-size: 34px;
+  font-family: 'Alex Brush';
+  color: #f76b6a;
+  margin: 80px auto 30px auto;
+  text-align: center;
+`
+
 const Schedule = styled.div`
   text-align: center;
 `
 
+
 const Home = ({ node }) => (
-  <section>
+  <HomeContainer background={node.background.fluid.srcWebp}>
     <Hero hero={node.hero} welcome={node.welcome} heading={node.heading} locale={node.node_locale} />
     <ContentGrid>
       <ContentContainer>
@@ -37,6 +51,7 @@ const Home = ({ node }) => (
             __html: node.body.childMarkdownRemark.html
           }}
         />
+        <Welcome>{node.scheduleHeading}</Welcome>
         <Schedule dangerouslySetInnerHTML={{
             __html: node.schedule.childMarkdownRemark.html
           }}
@@ -50,7 +65,7 @@ const Home = ({ node }) => (
     </ContentGrid>
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12838.985192216147!2d136.6262087!3d36.4395169!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfc3d8bd79e42849d!2sAhimsa+-+Shivam+Yoga+Center!5e0!3m2!1sen!2sjp!4v1550923626087" width="100%" height="395" frameBorder="0" style={{border: "0"}} allowFullScreen>
     </iframe>
-  </section>
+  </HomeContainer>
 )
 
 class IndexPage extends React.Component {
@@ -101,6 +116,13 @@ export const pageQuery = graphql`
           html
         }
       }
+      background {
+        title
+        fluid {
+          srcWebp
+        }
+      }
+      scheduleHeading
       schedule {
         childMarkdownRemark {
           html

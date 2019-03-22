@@ -27,6 +27,10 @@ const Statement = styled.div`
   font-size: 24px;
 `
 
+const SectionTitle = styled.h2`
+  margin-top: 80px;
+`
+
 const Schedule = styled.div`
   text-align: center;
 `
@@ -41,6 +45,7 @@ const Home = ({ node }) => (
             __html: node.body.childMarkdownRemark.html
           }}
         />
+        <SectionTitle>{node.scheduleHeading}</SectionTitle>
         <Schedule dangerouslySetInnerHTML={{
             __html: node.schedule.childMarkdownRemark.html
           }}
@@ -105,6 +110,7 @@ export const pageQuery = graphql`
           html
         }
       }
+      scheduleHeading
       schedule {
         childMarkdownRemark {
           html
