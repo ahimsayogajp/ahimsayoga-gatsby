@@ -7,7 +7,8 @@ import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import 'intl';
 
-import styled, { createGlobalStyle } from "styled-components"
+import styled, { ThemeProvider, createGlobalStyle } from "styled-components"
+import theme from 'styled-theming';
 
 import en from 'react-intl/locale-data/en';
 import 'intl/locale-data/jsonp/en';
@@ -42,6 +43,17 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 `
+
+// @todo => test setting something via theme, then accessing props via child components
+// then add the theme settings to a separate theme file.
+const boxBackgroundColor = theme('mode', {
+  light: 'green',
+  dark: '#000',
+});
+
+const Box = styled.div`
+  background-color: ${boxBackgroundColor};
+`;
 
 // Overall Grid: https://www.layoutit.com/grid/ysWOYND
 
@@ -82,30 +94,32 @@ class Layout extends Component {
         locale={this.langKey}
         messages={this.i18nMessages}
       >
-        <Container>
-          <React.Fragment>
-            <GlobalStyle />
-          </React.Fragment>
-          <Helmet
-            title="Ahimsa - Shivam Yoga Center"
-            meta={[
-              { name: 'description', content: 'ヨガ教室：　Kanazawa 金沢　ヨガ, Nomi 能美市' },
-              { name: 'keywords', content: 'ヨガ, ヨガ教室, ヨガ能美市, ヨガ金沢' },
-            ]}
-            link={[
-              { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` },
-              { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Kaushan+Script' },
-              { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,700' },
-              { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/earlyaccess/hannari.css' },
-              { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Noto+Sans+JP' }
-            ]}
-          />
-          <Header langs={this.langsMenu} locale={this.langKey} messages={this.i18nMessages} />
-          <Main>
-            {this.children}
-          </Main>
-          <Footer langs={this.langsMenu} locale={this.langKey} messages={this.i18nMessages} />
-        </Container>
+        <ThemeProvider theme={{ mode: 'light' }}>
+          <Container>
+            <React.Fragment>
+              <GlobalStyle />
+            </React.Fragment>
+            <Helmet
+              title="Ahimsa - Shivam Yoga Center"
+              meta={[
+                { name: 'description', content: 'ヨガ教室：　Kanazawa 金沢　ヨガ, Nomi 能美市' },
+                { name: 'keywords', content: 'ヨガ, ヨガ教室, ヨガ能美市, ヨガ金沢' },
+              ]}
+              link={[
+                { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` },
+                { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Kaushan+Script' },
+                { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,700' },
+                { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/earlyaccess/hannari.css' },
+                { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Noto+Sans+JP' }
+              ]}
+            />
+            <Header langs={this.langsMenu} locale={this.langKey} messages={this.i18nMessages} />
+            <Main>
+              {this.children}
+            </Main>
+            <Footer langs={this.langsMenu} locale={this.langKey} messages={this.i18nMessages} />
+          </Container>
+        </ThemeProvider>
       </IntlProvider>
     );
   }
