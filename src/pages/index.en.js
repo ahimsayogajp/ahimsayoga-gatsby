@@ -30,7 +30,7 @@ const Statement = styled.div`
 
 const Welcome = styled.div`
   font-size: 34px;
-  font-family: 'Alex Brush';
+  font-family: 'Kaushan Script';
   color: #f76b6a;
   margin: 80px auto 30px auto;
   text-align: center;

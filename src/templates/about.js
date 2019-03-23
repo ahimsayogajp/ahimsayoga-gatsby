@@ -14,7 +14,7 @@ const propTypes = {
 
 const Welcome = styled.div`
   font-size: 34px;
-  font-family: 'Alex Brush';
+  font-family: 'Kaushan Script';
   color: #f76b6a;
   margin-bottom: 6px;
 `

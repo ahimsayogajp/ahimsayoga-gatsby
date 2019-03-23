@@ -26,7 +26,7 @@ const Image = styled(Img)`
 
 const Welcome = styled.div`
   font-size: 34px;
-  font-family: 'Alex Brush';
+  font-family: 'Kaushan Script';
   color: #f76b6a;
   margin-bottom: 6px;
 `
@@ -35,7 +35,7 @@ const ContactDetail = styled.div`
   grid-area: right-column;
   .welcome {
     font-size: 34px;
-    font-family: 'Alex Brush';
+    font-family: 'Kaushan Script';
     color: #f76b6a;
     margin-bottom: 6px;
   }

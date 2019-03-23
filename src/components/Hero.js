@@ -33,7 +33,7 @@ const HeadingContainerInner = styled.div`
   }
   strong {
     font-size: ${props => (props.locale == 'ja') ? '15px' : '14px'};
-    font-family: ${props => (props.locale == 'ja') ? 'Hannari' : 'Alex Brush'};
+    font-family: ${props => (props.locale == 'ja') ? 'Hannari' : 'Kaushan Script'};
     font-weight: 400;
     font-style: normal;
   }
