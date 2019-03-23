@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
+import { FormattedMessage } from 'react-intl';
 
 import { device } from '../breakpoints'
 
@@ -142,16 +143,16 @@ const MainNav = (props) => (
     <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
     <ul className="menu">
       <li>
-        <Link to={'/' + props.locale + '/'}>{props.messages.home}</Link>
+        <Link to={'/' + props.locale + '/'}><FormattedMessage id="home" /></Link>
       </li>
       <li>
-        <Link to={'/' + props.locale + '/about'}>{props.messages.about}</Link>
+        <Link to={'/' + props.locale + '/about'}><FormattedMessage id="about" /></Link>
       </li>
       <li>
-        <Link to={'/' + props.locale + '/schedule'}>{props.messages.schedule}</Link>
+        <Link to={'/' + props.locale + '/schedule'}><FormattedMessage id="schedule" /></Link>
       </li>
       <li>
-        <Link to={'/' + props.locale + '/contact'}>{props.messages.contact}</Link>
+        <Link to={'/' + props.locale + '/contact'}><FormattedMessage id="contact" /></Link>
       </li>
     </ul>
   </Nav>

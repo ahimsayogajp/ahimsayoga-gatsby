@@ -52,7 +52,7 @@ const Header = (props) => (
       </Link>
     </Logo>
     <NavContainer>
-      <MainNav locale={props.locale} messages={props.messages} />
+      <MainNav locale={props.locale} />
     </NavContainer>
     <LangContainer>
       <SelectLanguage langs={props.langs} />
