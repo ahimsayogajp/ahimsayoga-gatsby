@@ -8,7 +8,7 @@ const Container = styled.section`
 `
 
 const Intro = styled.div`
-  color: #a6afd1;
+  color: ${props => props.theme.colors.textPromoIntro};
   text-transform: uppercase;
   font-size: 14px;
 `
@@ -28,7 +28,7 @@ const Cta = styled.div`
     text-decoration: none;
     &:focus, &:hover{
       border: 1px solid transparent;
-      box-shadow: -2px 20px 20px rgba(51,51,51,0.2);
+      box-shadow: -2px 20px 20px ${props => props.theme.colors.shadowCtaHover};
     }
   }
 `

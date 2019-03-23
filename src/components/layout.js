@@ -11,6 +11,7 @@ import styled, { ThemeProvider, createGlobalStyle } from "styled-components"
 import theme from 'styled-theming';
 
 import { colors } from '../theme/colors'
+import { fonts } from '../theme/fonts'
 import en from 'react-intl/locale-data/en';
 import 'intl/locale-data/jsonp/en';
 import ja from 'react-intl/locale-data/ja';
@@ -28,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-size: 14px;
-    font-family: "Lato",Helvetica,Arial,sans-serif;
+    font-family: ${props => props.theme.fonts.bodyDefault};
     color: ${props => props.theme.colors.bodyDefault};
   }
   h1 {
@@ -84,7 +85,7 @@ class Layout extends Component {
         locale={this.langKey}
         messages={this.i18nMessages}
       >
-        <ThemeProvider theme={{ colors: colors }}>
+        <ThemeProvider theme={{ colors: colors, fonts: fonts }}>
           <Container>
             <React.Fragment>
               <GlobalStyle />
@@ -97,17 +98,17 @@ class Layout extends Component {
               ]}
               link={[
                 { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` },
-                { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Roboto' },
+                { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Lato|Roboto' },
                 { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,700' },
                 { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/earlyaccess/hannari.css' },
                 { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Noto+Sans+JP' }
               ]}
             />
-            <Header langs={this.langsMenu} locale={this.langKey} messages={this.i18nMessages} />
+            <Header langs={this.langsMenu} locale={this.langKey} />
             <Main>
               {this.children}
             </Main>
-            <Footer langs={this.langsMenu} locale={this.langKey} messages={this.i18nMessages} />
+            <Footer langs={this.langsMenu} locale={this.langKey} />
           </Container>
         </ThemeProvider>
       </IntlProvider>

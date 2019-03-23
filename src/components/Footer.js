@@ -67,8 +67,7 @@ const Footer = (props) => (
 )
 
 Footer.propTypes = {
-  locale: PropTypes.string,
-  messages: PropTypes.object
+  locale: PropTypes.string
 }
 
 export default Footer;

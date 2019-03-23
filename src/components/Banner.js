@@ -35,13 +35,13 @@ const HeadingContainerInner = styled.div`
   }
   strong {
     font-size: ${props => (props.locale == 'ja') ? '30px' : '28px'};
-    font-family: ${props => (props.locale == 'ja') ? 'Hannari' : 'Kaushan Script'};
+    font-family: ${props => (props.locale == 'ja') ? props.theme.fonts.welcomeJapanese : props.theme.fonts.headingDefault};
     font-weight: 400;
     font-style: normal;
   }
   h1 {
     font-size: ${props => (props.locale == 'ja') ? '30px' : '28px'};
-    font-family: ${props => (props.locale == 'ja') ? 'Noto Sans JP' : 'inherit'};
+    font-family: ${props => (props.locale == 'ja') ? props.theme.fonts.headingJapanese : 'inherit'};
   }
   a, div {
     text-transform: uppercase;

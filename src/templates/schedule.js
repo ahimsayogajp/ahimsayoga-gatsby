@@ -14,7 +14,7 @@ const propTypes = {
 
 const Welcome = styled.div`
   font-size: 34px;
-  font-family: 'Kaushan Script';
+  font-family: ${props => props.theme.fonts.headingDefault};
   color: ${props => props.theme.colors.textWelcome};
   margin-bottom: 6px;
 `

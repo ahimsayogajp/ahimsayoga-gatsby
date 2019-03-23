@@ -14,7 +14,7 @@ import { device } from '../theme/breakpoints'
 const Head = styled(HeaderGrid)`
   grid-area: header;
   box-shadow: 0 1px 5px rgba(0,0,0,0.46);
-  font-family: 'Montserrat',sans-serif;
+  font-family: ${props => props.theme.fonts.textHeader};
   text-transform: uppercase;
 `
 
@@ -61,8 +61,7 @@ const Header = (props) => (
 )
 
 Header.propTypes = {
-  locale: PropTypes.string,
-  messages: PropTypes.object
+  locale: PropTypes.string
 }
 
 export default Header;
