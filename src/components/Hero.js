@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 
 import { ContentGrid } from '../components/layout/ContentGrid'
 
-import { device } from '../breakpoints'
+import { device } from '../theme/breakpoints'
 
 const RelativeContainer = styled.div`
   position: relative;
@@ -29,7 +29,7 @@ const HeadingContainerInner = styled.div`
   position: absolute;
   top: 2em;
   h1, strong {
-    color: #fff;
+    color: ${props => props.theme.colors.textHero};
   }
   strong {
     font-size: ${props => (props.locale == 'ja') ? '15px' : '14px'};

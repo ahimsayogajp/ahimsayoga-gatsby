@@ -8,8 +8,8 @@ import { ContentGrid, FooterInnerGrid } from '../components/layout/FooterGrid';
 
 const Foot = styled(ContentGrid)`
   grid-area: footer;
-  background: #2c2c2c;
-  color: #959595;
+  background: ${props => props.theme.colors.backgroundFooter};
+  color: ${props => props.theme.colors.textFooter};
 `
 
 const FooterContent = styled.div`
@@ -32,10 +32,10 @@ const CopyrightContainer = styled(FooterInnerGrid)`
     grid-area: copy-right;
   }
   a {
-    color: #cccccc;
+    color: ${props => props.theme.colors.linkFooter};
     margin-right: 2em;
     &:hover {
-      color: #fff;
+      color: ${props => props.theme.colors.linkHoverFooter};
     }
   }
 `

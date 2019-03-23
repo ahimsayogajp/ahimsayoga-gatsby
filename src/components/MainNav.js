@@ -4,7 +4,7 @@ import Link from 'gatsby-link'
 import styled from 'styled-components'
 import { FormattedMessage } from 'react-intl';
 
-import { device } from '../breakpoints'
+import { device } from '../theme/breakpoints'
 
 const Nav = styled.nav`
   grid-area: center;
@@ -24,13 +24,13 @@ const Nav = styled.nav`
     padding: 20px 20px;
     text-decoration: none;
     &:hover, &[aria-current] {
-      color: #f76b6a;
+      color: ${props => props.theme.colors.linkHoverMainNav};
     }
   }
 
   li a:hover,
   .menu-btn:hover {
-    background-color: #f4f4f4;
+    background-color: ${props => props.theme.colors.backgroundHoverMobileNav};
   }
 
   /* menu */
@@ -53,7 +53,7 @@ const Nav = styled.nav`
   }
 
   .menu-icon .navicon {
-    background: #333;
+    background: ${props => props.theme.colors.backgroundMobileNavIcon};
     display: block;
     height: 2px;
     position: relative;
@@ -63,7 +63,7 @@ const Nav = styled.nav`
 
   .menu-icon .navicon:before,
   .menu-icon .navicon:after {
-    background: #333;
+    background: ${props => props.theme.colors.backgroundMobileNavIcon};
     content: '';
     display: block;
     height: 100%;

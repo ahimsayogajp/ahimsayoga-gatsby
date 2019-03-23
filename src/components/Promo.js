@@ -20,8 +20,8 @@ const Title = styled.h3`
 
 const Cta = styled.div`
   a {
-    color: #FFF;
-    background-color: #FF675B;
+    color: ${props => props.theme.colors.linkCta};
+    background-color: ${props => props.theme.colors.backgroundCtaLink};
     font-size: 12px;
     padding: 11px 16px;
     border-radius: 2em;

@@ -8,7 +8,7 @@ import MainNav from './MainNav'
 import HeaderGrid from './layout/HeaderGrid'
 import logo from '../images/logo.png'
 
-import { device } from '../breakpoints'
+import { device } from '../theme/breakpoints'
 
 
 const Head = styled(HeaderGrid)`

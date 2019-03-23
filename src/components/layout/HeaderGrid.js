@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { device } from '../../breakpoints'
+import { device } from '../../theme/breakpoints'
 
 const HeaderGrid = styled.header`
   display: grid;

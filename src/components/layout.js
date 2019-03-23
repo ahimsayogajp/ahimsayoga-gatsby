@@ -10,6 +10,7 @@ import 'intl';
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components"
 import theme from 'styled-theming';
 
+import { colors } from '../theme/colors'
 import en from 'react-intl/locale-data/en';
 import 'intl/locale-data/jsonp/en';
 import ja from 'react-intl/locale-data/ja';
@@ -28,32 +29,21 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-size: 14px;
     font-family: "Lato",Helvetica,Arial,sans-serif;
-    color: #696969;
+    color: ${props => props.theme.colors.bodyDefault};
   }
   h1 {
     margin-block-start: 0;
   }
   h3 {
-    color: #333;
+    color: ${props => props.theme.colors.headingDefault};
   }
   a {
-    color: #222;
+    color: ${props => props.theme.colors.linkDefault};
     &:hover {
-      color: #f76b6a;
+      color: ${props => props.theme.colors.linkHoverDefault};
     }
   }
 `
-
-// @todo => test setting something via theme, then accessing props via child components
-// then add the theme settings to a separate theme file.
-const boxBackgroundColor = theme('mode', {
-  light: 'green',
-  dark: '#000',
-});
-
-const Box = styled.div`
-  background-color: ${boxBackgroundColor};
-`;
 
 // Overall Grid: https://www.layoutit.com/grid/ysWOYND
 
@@ -94,7 +84,7 @@ class Layout extends Component {
         locale={this.langKey}
         messages={this.i18nMessages}
       >
-        <ThemeProvider theme={{ mode: 'light' }}>
+        <ThemeProvider theme={{ colors: colors }}>
           <Container>
             <React.Fragment>
               <GlobalStyle />
@@ -107,7 +97,7 @@ class Layout extends Component {
               ]}
               link={[
                 { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` },
-                { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Kaushan+Script' },
+                { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Roboto' },
                 { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,700' },
                 { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/earlyaccess/hannari.css' },
                 { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Noto+Sans+JP' }

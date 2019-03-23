@@ -19,12 +19,12 @@ const Nav = styled.nav`
     letter-spacing: 0.2px;
     font-size: 14px;
     font-weight: bold;
-    color: #696969;
+    color: ${props => props.theme.colors.linkLangSwitcher};
     &:hover {
-      color: #f76b6a;
+      color: ${props => props.theme.colors.linkLangSwitcherHover};
     }
     &[aria-current] {
-      color: #333;
+      color: ${props => props.theme.colors.linkLangSwitcherActive};
     }
   }
 `

@@ -9,7 +9,7 @@ import Layout from "../components/layout"
 import Hero from '../components/Hero'
 import Promo from '../components/Promo'
 
-import { device } from '../breakpoints'
+import { device } from '../theme/breakpoints'
 
 const propTypes = {
   data: PropTypes.object.isRequired,
@@ -20,15 +20,19 @@ const RelativeContainer = styled.div`
 `
 
 const Statement = styled.div`
-  color: #333;
+  color: ${props => props.theme.colors.headingDefault};
   text-align: center;
   padding-bottom: 75px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid ${props => props.theme.colors.borderDefault};
   font-size: 24px;
 `
 
-const SectionTitle = styled.h2`
-  margin-top: 80px;
+const Welcome = styled.div`
+  font-size: 34px;
+  font-family: 'Kaushan Script';
+  color: ${props => props.theme.colors.textWelcome};
+  margin: 80px auto 30px auto;
+  text-align: center;
 `
 
 const Schedule = styled.div`
@@ -45,7 +49,7 @@ const Home = ({ node }) => (
             __html: node.body.childMarkdownRemark.html
           }}
         />
-        <SectionTitle>{node.scheduleHeading}</SectionTitle>
+        <Welcome>{node.scheduleHeading}</Welcome>
         <Schedule dangerouslySetInnerHTML={{
             __html: node.schedule.childMarkdownRemark.html
           }}

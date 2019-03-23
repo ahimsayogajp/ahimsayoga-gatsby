@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 
 import { ContentGrid } from '../components/layout/ContentGrid'
 
-import { device } from '../breakpoints'
+import { device } from '../theme/breakpoints'
 
 const RelativeContainer = styled.div`
   position: relative;
@@ -31,7 +31,7 @@ const HeadingContainerInner = styled.div`
   left: 50%;
   margin-left: -50%;
   h1, strong, a, div {
-    color: #fff;
+    color: ${props => props.theme.colors.textBanner};
   }
   strong {
     font-size: ${props => (props.locale == 'ja') ? '30px' : '28px'};

@@ -14,8 +14,8 @@ const propTypes = {
 
 const Welcome = styled.div`
   font-size: 34px;
-  font-family: 'Kaushan Script';
-  color: #f76b6a;
+  font-family: 'Roboto';
+  color: ${props => props.theme.colors.textWelcome};
   margin-bottom: 6px;
 `
 
@@ -33,7 +33,7 @@ const InstructorsContainer = styled(ContentContainer)`
 
 const ProfileContainer = styled.div`
   position: relative;
-  border: 1px solid #eee;
+  border: 1px solid ${props => props.theme.colors.borderDefault};
   border-radius: 5px;
   padding-top: 30px;
 `

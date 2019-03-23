@@ -27,7 +27,7 @@ const Image = styled(Img)`
 const Welcome = styled.div`
   font-size: 34px;
   font-family: 'Kaushan Script';
-  color: #f76b6a;
+  color: ${props => props.theme.colors.textWelcome};
   margin-bottom: 6px;
 `
 
@@ -36,12 +36,12 @@ const ContactDetail = styled.div`
   .welcome {
     font-size: 34px;
     font-family: 'Kaushan Script';
-    color: #f76b6a;
+    color: ${props => props.theme.colors.textWelcome};
     margin-bottom: 6px;
   }
   h2 {
     font-size: 48px;
-    color: #333;
+    color: ${props => props.theme.colors.headingDefault};
     text-transform: uppercase;
     margin-top: 0;
   }
