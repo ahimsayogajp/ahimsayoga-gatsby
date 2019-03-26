@@ -13,7 +13,7 @@ const ContentContainer = styled.div`
   font-family: 'Montserrat',sans-serif;
   font-size: 16px;
   padding-top: 136px;
-  margin-bottom: 70px;
+  margin-bottom: 150px;
 `
 
 export { ContentGrid, ContentContainer };

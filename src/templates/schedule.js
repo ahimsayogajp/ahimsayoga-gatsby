@@ -23,6 +23,10 @@ const Timetable = styled.div`
   hr {
     margin: 80px 0;
   }
+  ul {
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+  }
 `
 
 const Schedule = ({ node }) => (

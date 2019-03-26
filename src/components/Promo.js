@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const Container = styled.section`
-  margin-top: 75px;
+  margin-top: 150px;
   text-align: center;
 `
 

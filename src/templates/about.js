@@ -29,6 +29,7 @@ const InstructorsContainer = styled(ContentContainer)`
   grid-template-rows: auto;
   column-gap: 2rem;
   padding-top: 20px;
+  margin-bottom: 0px;
 `
 
 const ProfileContainer = styled.div`
