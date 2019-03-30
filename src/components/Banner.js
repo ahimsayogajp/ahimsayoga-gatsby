@@ -27,7 +27,7 @@ const HeadingContainer = styled.div`
 
 const HeadingContainerInner = styled.div`
   position: absolute;
-  top: 0.5em;
+  top: 0.4em;
   left: 50%;
   margin-left: -50%;
   h1, strong, a, div {
@@ -61,7 +61,7 @@ const HeadingContainerInner = styled.div`
   }
 
   @media ${device.mobileM} {
-    top: 5em;
+    top: 2em;
     strong {
       font-size: 18px;
     }
@@ -71,7 +71,7 @@ const HeadingContainerInner = styled.div`
   }
 
   @media ${device.mobileL} {
-    top: 6em;
+    top: 2em;
     strong {
       font-size: 21px;
     }
@@ -81,7 +81,7 @@ const HeadingContainerInner = styled.div`
   }
 
   @media ${device.tablet} {
-    top: 10em;
+    top: 5em;
     strong {
       font-size: 30px;
     }
@@ -91,7 +91,7 @@ const HeadingContainerInner = styled.div`
   }
 
   @media ${device.laptop} {
-    top: 14em;
+    top: 8em;
     strong {
       font-size: 33px;
     }
@@ -100,7 +100,7 @@ const HeadingContainerInner = styled.div`
     }
   }
   @media ${device.laptopL} {
-    top: 18em;
+    top: 14em;
     strong {
       font-size: 44px;
     }

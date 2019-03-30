@@ -12,7 +12,7 @@ const ContentContainer = styled.div`
   grid-area: center;
   font-family: 'Montserrat',sans-serif;
   font-size: 16px;
-  padding-top: 136px;
+  padding-top: 120px;
   margin-bottom: 150px;
 `
 
