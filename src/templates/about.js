@@ -7,6 +7,7 @@ import styled from "styled-components"
 import { ContentGrid, ContentContainer } from '../components/layout/ContentGrid'
 import Layout from "../components/layout"
 import Banner from '../components/Banner'
+import { device } from '../theme/breakpoints'
 
 const propTypes = {
   data: PropTypes.object.isRequired,
@@ -25,11 +26,15 @@ const SectionTitle = styled.h2`
 
 const InstructorsContainer = styled(ContentContainer)`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
+  grid-template-columns: 1fr;
   column-gap: 2rem;
+  grid-template-rows: auto;
+  row-gap: 2rem;
   padding-top: 20px;
   margin-bottom: 0px;
+  @media ${device.tablet} {
+    grid-template-columns: 1fr 1fr;
+  }
 `
 
 const ProfileContainer = styled.div`

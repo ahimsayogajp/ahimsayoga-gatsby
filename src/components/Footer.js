@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { FaTwitter, FaInstagram, FaYoutube, FaFacebook } from 'react-icons/fa';
 
 import { ContentGrid, FooterInnerGrid } from '../components/layout/FooterGrid';
+import { device } from '../theme/breakpoints'
 
 const Foot = styled(ContentGrid)`
   grid-area: footer;
@@ -19,21 +20,24 @@ const FooterContent = styled.div`
 const CopyrightContainer = styled(FooterInnerGrid)`
   align-content: space-around;
   min-height: 100px;
+  @media ${device.mobileS}, ${device.mobileM}, ${device.mobileL} {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "copy-left copy-right";
+  }
   .social-media {
     margin-top: 2.75em;
-  }
-  .footer-copyright-text {
-    margin-top: 2em;
-  }
-  .social-media {
     grid-area: copy-left;
   }
   .footer-copyright-text {
+    margin-top: 2em;
     grid-area: copy-right;
   }
   a {
     color: ${props => props.theme.colors.linkFooter};
-    margin-right: 2em;
+    margin-right: 1em;
+    @media ${device.laptop} {
+      margin-right: 2em;
+    }
     &:hover {
       color: ${props => props.theme.colors.linkHoverFooter};
     }
