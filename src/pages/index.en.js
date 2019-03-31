@@ -16,7 +16,7 @@ const propTypes = {
 
 const HomeContainer = styled.section`
   background: ${props => `url(${props.background}) no-repeat`};
-  background-position: 12% 72%;
+  background-position: 12% 70%;
   background-size: 35% auto;
 `
 

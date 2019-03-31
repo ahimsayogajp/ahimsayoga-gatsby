@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 const Container = styled.section`
   margin-top: 150px;
+  margin-bottom: 100px;
   text-align: center;
 `
 
