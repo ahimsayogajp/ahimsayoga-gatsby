@@ -7,6 +7,7 @@ import styled from "styled-components"
 import { ContentGrid, ContentContainer } from '../components/layout/ContentGrid'
 import Layout from "../components/layout"
 import Banner from '../components/Banner'
+import { device } from '../theme/breakpoints'
 
 const propTypes = {
   data: PropTypes.object.isRequired,
@@ -14,25 +15,19 @@ const propTypes = {
 
 const ContactContainer = styled(ContentContainer)`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: auto;
-  grid-template-areas: "left-column right-column";
-`
-
-const Image = styled(Img)`
-  grid-area: left-column;
-  margin-right: 100px;
-`
-
-const Welcome = styled.div`
-  font-size: 34px;
-  font-family: ${props => props.theme.fonts.headingDefault};
-  color: ${props => props.theme.colors.textWelcome};
-  margin-bottom: 6px;
+  row-gap: 2rem;
+  @media ${device.laptop} {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "left-column right-column";
+  }
 `
 
 const ContactDetail = styled.div`
-  grid-area: right-column;
+  @media ${device.laptop} {
+    grid-area: right-column;
+  }
   .welcome {
     font-size: 34px;
     font-family: ${props => props.theme.fonts.headingDefault};
@@ -47,18 +42,28 @@ const ContactDetail = styled.div`
   }
 `
 
+const Welcome = styled.div`
+  font-size: 34px;
+  font-family: ${props => props.theme.fonts.headingDefault};
+  color: ${props => props.theme.colors.textWelcome};
+  margin-bottom: 6px;
+`
+
+const Image = styled(Img)`
+  @media ${device.laptop} {
+    grid-area: left-column;
+    margin-right: 50px;
+  }
+  @media ${device.laptopL} {
+    margin-right: 100px;
+  }
+`
+
 const Contact = ({ node }) => (
   <section>
     <Banner banner={node.banner} heading={node.heading} locale={node.node_locale} />
     <ContentGrid>
       <ContactContainer>
-        <Image
-          key={node.image.fluid.src}
-          alt={node.image.title}
-          fluid={node.image.fluid}
-          aspectRatio={node.image.aspectRatio}
-          sizes={node.image.sizes}
-        />
         <ContactDetail>
           <Welcome>{node.welcome}</Welcome>
           <h2>{node.heading}</h2>
@@ -68,6 +73,13 @@ const Contact = ({ node }) => (
             }}
           />
         </ContactDetail>
+        <Image
+          key={node.image.fluid.src}
+          alt={node.image.title}
+          fluid={node.image.fluid}
+          aspectRatio={node.image.aspectRatio}
+          sizes={node.image.sizes}
+        />
       </ContactContainer>
     </ContentGrid>
   </section>
