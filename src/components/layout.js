@@ -98,10 +98,8 @@ class Layout extends Component {
               ]}
               link={[
                 { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` },
-                { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Lato|Roboto' },
-                { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,700' },
-                { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/earlyaccess/hannari.css' },
-                { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Noto+Sans+JP' }
+                { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Lato|Roboto|Noto+Sans+JP|Montserrat:400,700' },
+                { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/earlyaccess/hannari.css' }
               ]}
             />
             <Header langs={this.langsMenu} locale={this.langKey} />

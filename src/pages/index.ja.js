@@ -25,6 +25,7 @@ const Statement = styled.div`
   padding-bottom: 75px;
   border-bottom: 1px solid ${props => props.theme.colors.borderDefault};
   font-size: 24px;
+  font-weight: 600;
 `
 
 const Welcome = styled.div`

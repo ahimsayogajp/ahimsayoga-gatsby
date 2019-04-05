@@ -33,9 +33,9 @@ const HeadingContainerInner = styled.div`
   }
   strong {
     font-size: ${props => (props.locale == 'ja') ? '15px' : '14px'};
-    font-family: ${props => (props.locale == 'ja') ? props.theme.fonts.welcomeJapanese : props.theme.fonts.headingDefault};
+    font-family: ${props => (props.locale == 'ja') ? props.theme.fonts.welcomeJapanese : props.theme.fonts.welcomeEnglish};
     font-weight: 400;
-    font-style: normal;
+    font-style: ${props => (props.locale == 'ja') ? 'italic' : 'normal'};
   }
   h1 {
     font-size: ${props => (props.locale == 'ja') ? '16px' : '15px'};
