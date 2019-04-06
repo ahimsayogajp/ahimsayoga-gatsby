@@ -40,7 +40,7 @@ const LangSwitchMsg = styled.div`
 `
 
 const SelectLanguage = (props) => {
-  const links = props.langs.map(lang =>
+  const links = props.langsMenu.map(lang =>
     <Link to={lang.link} key={lang.langKey}>
       <li selected={lang.selected}>
         {lang.langKey}
@@ -61,7 +61,7 @@ const SelectLanguage = (props) => {
 };
 
 SelectLanguage.propTypes = {
-  langs: PropTypes.array
+  langsMenu: PropTypes.array
 };
 
 export default SelectLanguage;

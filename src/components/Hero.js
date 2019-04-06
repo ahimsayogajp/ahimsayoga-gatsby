@@ -96,6 +96,7 @@ const Image = styled(Img)`
   left: 0;
   top: 1px;
   z-index: -1;
+  min-height: 300px;
 `
 
 const Hero = (props) => (

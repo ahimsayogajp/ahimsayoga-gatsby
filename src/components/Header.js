@@ -52,16 +52,18 @@ const Header = (props) => (
       </Link>
     </Logo>
     <NavContainer>
-      <MainNav locale={props.locale} />
+      <MainNav locale={props.locale} location={props.location} />
     </NavContainer>
     <LangContainer>
-      <SelectLanguage langs={props.langs} />
+      <SelectLanguage langsMenu={props.langsMenu} />
     </LangContainer>
   </Head>
 )
 
 Header.propTypes = {
-  locale: PropTypes.string
+  langsMenu: PropTypes.array,
+  locale: PropTypes.string,
+  location: PropTypes.object
 }
 
 export default Header;

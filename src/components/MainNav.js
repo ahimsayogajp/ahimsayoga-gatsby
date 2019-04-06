@@ -23,7 +23,7 @@ const Nav = styled.nav`
     color: #333;
     padding: 20px 20px;
     text-decoration: none;
-    &:hover, &[aria-current] {
+    &:hover, &[aria-current], &.current {
       color: ${props => props.theme.colors.linkHoverMainNav};
     }
   }
@@ -143,16 +143,16 @@ const MainNav = (props) => (
     <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
     <ul className="menu">
       <li>
-        <Link to={'/' + props.locale + '/'}><FormattedMessage id="home" /></Link>
+        <Link className={props.location.pathname == ('/' + props.locale + '/') ? 'current' : undefined} to={'/' + props.locale + '/'}><FormattedMessage id="home" /></Link>
       </li>
       <li>
-        <Link to={'/' + props.locale + '/about'}><FormattedMessage id="about" /></Link>
+        <Link className={props.location.pathname == ('/' + props.locale + '/about/') ? 'current' : undefined} to={'/' + props.locale + '/about'}><FormattedMessage id="about" /></Link>
       </li>
       <li>
-        <Link to={'/' + props.locale + '/schedule'}><FormattedMessage id="schedule" /></Link>
+        <Link className={props.location.pathname == ('/' + props.locale + '/schedule/') ? 'current' : undefined} to={'/' + props.locale + '/schedule'}><FormattedMessage id="schedule" /></Link>
       </li>
       <li>
-        <Link to={'/' + props.locale + '/contact'}><FormattedMessage id="contact" /></Link>
+        <Link className={props.location.pathname == ('/' + props.locale + '/contact/') ? 'current' : undefined} to={'/' + props.locale + '/contact'}><FormattedMessage id="contact" /></Link>
       </li>
     </ul>
   </Nav>
@@ -160,7 +160,7 @@ const MainNav = (props) => (
 
 MainNav.propTypes = {
   locale: PropTypes.string,
-  messages: PropTypes.object
+  location: PropTypes.object
 }
 
 export default MainNav;
