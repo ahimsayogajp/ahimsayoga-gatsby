@@ -136,37 +136,30 @@ const Nav = styled.nav`
     }
   }
 `
-/**
- *
- * Adding the className condition in here is a hack as the aria-current attrib is not set
- * for pages loaded directly for some reason.
- * @todo: get to the bottom of this to ensure attrib loaded for both click to navigate and
- * direct load of pages, then remove the .current className and CSS styles.
- */
+
 const MainNav = (props) => (
   <Nav className="main">
     <input className="menu-btn" type="checkbox" id="menu-btn" />
     <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
     <ul className="menu">
       <li>
-        <Link className={props.location.pathname == ('/' + props.locale + '/') ? 'current' : undefined} to={'/' + props.locale + '/'}><FormattedMessage id="home" /></Link>
+        <Link to={'/' + props.locale + '/'}><FormattedMessage id="home" /></Link>
       </li>
       <li>
-        <Link className={props.location.pathname == ('/' + props.locale + '/about/') ? 'current' : undefined} to={'/' + props.locale + '/about'}><FormattedMessage id="about" /></Link>
+        <Link to={'/' + props.locale + '/about/'}><FormattedMessage id="about" /></Link>
       </li>
       <li>
-        <Link className={props.location.pathname == ('/' + props.locale + '/schedule/') ? 'current' : undefined} to={'/' + props.locale + '/schedule'}><FormattedMessage id="schedule" /></Link>
+        <Link to={'/' + props.locale + '/schedule/'}><FormattedMessage id="schedule" /></Link>
       </li>
       <li>
-        <Link className={props.location.pathname == ('/' + props.locale + '/contact/') ? 'current' : undefined} to={'/' + props.locale + '/contact'}><FormattedMessage id="contact" /></Link>
+        <Link to={'/' + props.locale + '/contact/'}><FormattedMessage id="contact" /></Link>
       </li>
     </ul>
   </Nav>
 )
 
 MainNav.propTypes = {
-  locale: PropTypes.string,
-  location: PropTypes.object
+  locale: PropTypes.string
 }
 
 export default MainNav;

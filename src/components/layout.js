@@ -102,7 +102,7 @@ class Layout extends Component {
                 { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/earlyaccess/hannari.css' }
               ]}
             />
-            <Header langsMenu={this.langsMenu} locale={this.langKey} location={this.props.location} />
+            <Header langsMenu={this.langsMenu} locale={this.langKey} />
             <Main>
               {this.children}
             </Main>
