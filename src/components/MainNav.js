@@ -136,7 +136,13 @@ const Nav = styled.nav`
     }
   }
 `
-
+/**
+ *
+ * Adding the className condition in here is a hack as the aria-current attrib is not set
+ * for pages loaded directly for some reason.
+ * @todo: get to the bottom of this to ensure attrib loaded for both click to navigate and
+ * direct load of pages, then remove the .current className and CSS styles.
+ */
 const MainNav = (props) => (
   <Nav className="main">
     <input className="menu-btn" type="checkbox" id="menu-btn" />
