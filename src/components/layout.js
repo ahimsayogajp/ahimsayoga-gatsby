@@ -85,7 +85,7 @@ class Layout extends Component {
         locale={this.langKey}
         messages={this.i18nMessages}
       >
-        <ThemeProvider theme={{ colors: colors, fonts: fonts }}>
+        <ThemeProvider theme={{ locale: this.langKey, colors: colors, fonts: fonts }}>
           <Container>
             <React.Fragment>
               <GlobalStyle />

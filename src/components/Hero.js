@@ -33,7 +33,7 @@ const HeadingContainerInner = styled.div`
   }
   strong {
     font-size: ${props => (props.locale == 'ja') ? '15px' : '14px'};
-    font-family: ${props => (props.locale == 'ja') ? props.theme.fonts.welcomeJapanese : props.theme.fonts.welcomeEnglish};
+    font-family: ${props => props.theme.fonts.welcomeDefault};
     font-weight: 400;
     font-style: ${props => (props.locale == 'ja') ? 'italic' : 'normal'};
   }
