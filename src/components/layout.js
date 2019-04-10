@@ -29,7 +29,6 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-size: 14px;
-    font-family: ${props => props.theme.fonts.bodyDefault};
     color: ${props => props.theme.colors.bodyDefault};
   }
   h1 {
@@ -37,6 +36,9 @@ const GlobalStyle = createGlobalStyle`
   }
   h3 {
     color: ${props => props.theme.colors.headingDefault};
+  }
+  p {
+    line-height: 1.5em;
   }
   a {
     color: ${props => props.theme.colors.linkDefault};
@@ -55,6 +57,7 @@ const Container = styled.div`
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas: "header" "main" "footer";
+  font-family: ${props => (props.theme.locale == 'ja') ? props.theme.fonts.bodyJapanese : props.theme.fonts.bodyDefault};
 `
 
 const Main = styled.main`

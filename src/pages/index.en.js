@@ -15,9 +15,10 @@ const propTypes = {
 }
 
 const HomeContainer = styled.section`
-  background: ${props => `url(${props.background}) no-repeat`};
-  background-position: 12% 70%;
-  background-size: 35% auto;
+  /* @media ${device.laptop} {
+    background: ${props => `url(${props.backgroundLeft}) left 65% no-repeat, url(${props.backgroundRight}) right 65% no-repeat`};
+    background-size: 40em auto, 40em auto;
+  } */
 `
 
 const Statement = styled.div`
@@ -46,7 +47,7 @@ const Schedule = styled.div`
 
 
 const Home = ({ node }) => (
-  <HomeContainer background={node.background.fluid.srcWebp}>
+  <HomeContainer backgroundLeft={node.backgroundLeft.fluid.srcWebp} backgroundRight={node.backgroundRight.fluid.srcWebp}>
     <Hero hero={node.hero} welcome={node.welcome} heading={node.heading} locale={node.node_locale} />
     <ContentGrid>
       <ContentContainer>
@@ -120,7 +121,13 @@ export const pageQuery = graphql`
           html
         }
       }
-      background {
+      backgroundLeft {
+        title
+        fluid {
+          srcWebp
+        }
+      }
+      backgroundRight {
         title
         fluid {
           srcWebp

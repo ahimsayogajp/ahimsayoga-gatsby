@@ -27,43 +27,35 @@ const HeadingContainer = styled.div`
 
 const HeadingContainerInner = styled.div`
   position: absolute;
-  top: 2em;
+  top: 11em;
   h1, strong {
     color: ${props => props.theme.colors.textHero};
+    font-style: normal;
+    line-height: 25px;
   }
   strong {
-    font-size: ${props => (props.locale == 'ja') ? '15px' : '14px'};
+    font-size: 25px;
     font-family: ${props => props.theme.fonts.welcomeDefault};
     font-weight: 400;
-    font-style: ${props => (props.locale == 'ja') ? 'italic' : 'normal'};
   }
   h1 {
-    font-size: ${props => (props.locale == 'ja') ? '16px' : '15px'};
-    font-family: ${props => (props.locale == 'ja') ? props.theme.fonts.headingJapanese : 'inherit'};
+    font-size: 30px;
+    font-family: ${props => props.theme.fonts.textHeader};
+    font-weight: 550;
+    letter-spacing: 0.2px;
+    line-height: 1em;
   }
 
   @media ${device.mobileM} {
-    top: 5em;
     strong {
-      font-size: 18px;
+      font-size: 28px;
     }
     h1 {
-      font-size: 22px;
+      font-size: 32px;
     }
   }
 
   @media ${device.mobileL} {
-    top: 6em;
-    strong {
-      font-size: 21px;
-    }
-    h1 {
-      font-size: 24px;
-    }
-  }
-
-  @media ${device.tablet} {
-    top: 10em;
     strong {
       font-size: 30px;
     }
@@ -72,22 +64,32 @@ const HeadingContainerInner = styled.div`
     }
   }
 
-  @media ${device.laptop} {
-    top: 14em;
+  @media ${device.tablet} {
+    top: 13em;
     strong {
-      font-size: 33px;
+      font-size: 34px;
     }
     h1 {
+      font-size: 39px;
+    }
+  }
+
+  @media ${device.laptop} {
+    top: 20em;
+    strong {
       font-size: 38px;
+    }
+    h1 {
+      font-size: 43px;
     }
   }
   @media ${device.laptopL} {
-    top: 18em;
+    top: 24em;
     strong {
-      font-size: 44px;
+      font-size: 42px;
     }
     h1 {
-      font-size: 50px;
+      font-size: 52px;
     }
   }
 `

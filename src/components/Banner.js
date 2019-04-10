@@ -27,21 +27,22 @@ const HeadingContainer = styled.div`
 
 const HeadingContainerInner = styled.div`
   position: absolute;
-  top: 0.4em;
+  top: 4em;
   left: 50%;
   margin-left: -50%;
   h1, strong, a, div {
     color: ${props => props.theme.colors.textBanner};
   }
   strong {
-    font-size: ${props => (props.locale == 'ja') ? '30px' : '28px'};
+    font-size: ${props => (props.locale == 'ja') ? '25px' : '28px'};
     font-family: ${props => (props.locale == 'ja') ? props.theme.fonts.welcomeJapanese : props.theme.fonts.headingDefault};
     font-weight: 400;
     font-style: normal;
   }
   h1 {
-    font-size: ${props => (props.locale == 'ja') ? '30px' : '28px'};
+    font-size: ${props => (props.locale == 'ja') ? '25px' : '28px'};
     font-family: ${props => (props.locale == 'ja') ? props.theme.fonts.headingJapanese : 'inherit'};
+    margin-block-end: 13px;
   }
   a, div {
     text-transform: uppercase;
@@ -61,7 +62,7 @@ const HeadingContainerInner = styled.div`
   }
 
   @media ${device.mobileM} {
-    top: 2em;
+    top: 6em;
     strong {
       font-size: 18px;
     }
@@ -71,7 +72,7 @@ const HeadingContainerInner = styled.div`
   }
 
   @media ${device.mobileL} {
-    top: 2em;
+    top: 6.5em;
     strong {
       font-size: 21px;
     }
@@ -81,7 +82,7 @@ const HeadingContainerInner = styled.div`
   }
 
   @media ${device.tablet} {
-    top: 5em;
+    top: 7em;
     strong {
       font-size: 30px;
     }
@@ -91,7 +92,7 @@ const HeadingContainerInner = styled.div`
   }
 
   @media ${device.laptop} {
-    top: 8em;
+    top: 9em;
     strong {
       font-size: 33px;
     }
@@ -100,7 +101,7 @@ const HeadingContainerInner = styled.div`
     }
   }
   @media ${device.laptopL} {
-    top: 14em;
+    top: 12em;
     strong {
       font-size: 44px;
     }
