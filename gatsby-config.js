@@ -24,6 +24,12 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || ''
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-98124033-1"
+      },
+    },
     `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`
   ],
