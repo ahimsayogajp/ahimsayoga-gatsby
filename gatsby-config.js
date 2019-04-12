@@ -4,7 +4,8 @@ const languages = require('./src/data/languages');
 
 module.exports = {
   siteMetadata: {
-    title: `Ahimsa Yoga Center Website, powered by Gatsby & Contentful`,
+    siteUrl: `https://ahimsayoga.jp`,
+    title: `Ahimsa - Shivam Yoga Center`,
     languages
   },
   plugins: [
@@ -32,6 +33,7 @@ module.exports = {
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`
   ],
 }
