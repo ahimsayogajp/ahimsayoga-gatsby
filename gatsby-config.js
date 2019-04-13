@@ -10,6 +10,8 @@ module.exports = {
     keywords: `ヨガ, ヨガ教室, ヨガ能美市, ヨガ金沢`,
     author: `@ahimsayogajp`,
     fbId: `969485113198945`,
+    imageWidth: '1398',
+    imageHeight: '927',
     languages
   },
   plugins: [

@@ -38,11 +38,11 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 property: `og:image:width`,
-                content: '1398',
+                content: data.site.siteMetadata.imageWidth,
               },
               {
                 property: `og:image:height`,
-                content: '927',
+                content: data.site.siteMetadata.imageHeight,
               },
               {
                 property: `og:type`,
@@ -110,6 +110,8 @@ const detailsQuery = graphql`
         description
         author
         fbId
+        imageWidth
+        imageHeight
       }
     }
   }
