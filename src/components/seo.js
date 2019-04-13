@@ -34,7 +34,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 property: `og:image`,
-                content: image,
+                content: data.site.siteMetadata.siteUrl + image,
               },
               {
                 property: `og:image:width`,
@@ -105,6 +105,7 @@ const detailsQuery = graphql`
   query DefaultSEOQuery {
     site {
       siteMetadata {
+        siteUrl
         title
         description
         author
