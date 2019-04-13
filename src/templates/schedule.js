@@ -6,6 +6,8 @@ import styled from "styled-components"
 
 import { ContentGrid, ContentContainer } from '../components/layout/ContentGrid'
 import Layout from "../components/layout"
+import SEO from "../components/seo"
+
 import Banner from '../components/Banner'
 
 const propTypes = {
@@ -50,6 +52,7 @@ class ScheduleTemplate extends React.Component {
     const data = this.props.data;
     return (
       <Layout data={this.props.data} location={this.props.location}>
+        <SEO title="Ahimsa Shivam Yoga Center" lang={node.node_locale} />
         <Schedule node={this.props.data.contentfulSchedule}></Schedule>
       </Layout>
     )

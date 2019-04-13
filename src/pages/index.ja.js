@@ -8,6 +8,7 @@ import { ContentGrid, ContentContainer } from '../components/layout/ContentGrid'
 import Layout from "../components/layout"
 import Hero from '../components/Hero'
 import Promo from '../components/Promo'
+import SEO from "../components/seo"
 
 import { device } from '../theme/breakpoints'
 
@@ -81,6 +82,7 @@ class IndexPage extends React.Component {
   render() {
     return (
       <Layout data={this.props.data} location={this.props.location}>
+        <SEO title="Ahimsa Shivam Yoga Center" lang='ja' />
         <Home node={this.props.data.page}></Home>
       </Layout>
     )

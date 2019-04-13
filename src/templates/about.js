@@ -7,6 +7,8 @@ import styled from "styled-components"
 import { ContentGrid, ContentContainer } from '../components/layout/ContentGrid'
 import Layout from "../components/layout"
 import Banner from '../components/Banner'
+import SEO from "../components/seo"
+
 import { device } from '../theme/breakpoints'
 
 const propTypes = {
@@ -56,6 +58,7 @@ const Image = styled(Img)`
 
 const About = ({ node }) => (
   <section>
+    <SEO title="Ahimsa Shivam Yoga Center" lang={node.node_locale} />
     <Banner banner={node.banner} heading={node.heading} locale={node.node_locale} />
     <ContentGrid>
       <ContentContainer>

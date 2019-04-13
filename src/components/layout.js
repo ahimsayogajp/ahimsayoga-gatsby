@@ -94,11 +94,6 @@ class Layout extends Component {
               <GlobalStyle />
             </React.Fragment>
             <Helmet
-              title="Ahimsa - Shivam Yoga Center"
-              meta={[
-                { name: 'description', content: 'ヨガ教室：　Kanazawa 金沢　ヨガ, Nomi 能美市' },
-                { name: 'keywords', content: 'ヨガ, ヨガ教室, ヨガ能美市, ヨガ金沢' },
-              ]}
               link={[
                 { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` },
                 { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Lato|Roboto|Noto+Sans+JP|Montserrat:400,700' },
