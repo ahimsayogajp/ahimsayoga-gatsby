@@ -8,7 +8,8 @@ module.exports = {
     title: `Ahimsa - Shivam Yoga Center`,
     description: `ヨガ教室：　Kanazawa 金沢　ヨガ, Nomi 能美市`,
     keywords: `ヨガ, ヨガ教室, ヨガ能美市, ヨガ金沢`,
-    author: `Ahimsa Life`,
+    author: `@ahimsayogajp`,
+    fbId: `969485113198945,`
     languages
   },
   plugins: [

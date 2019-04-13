@@ -64,6 +64,10 @@ function SEO({ description, lang, meta, keywords, title }) {
                 name: `twitter:description`,
                 content: metaDescription,
               },
+              {
+                name: `fb:app_id`,
+                content: data.site.siteMetadata.fbId,
+              },
             ]
               .concat(
                 keywords.length > 0
@@ -104,6 +108,7 @@ const detailsQuery = graphql`
         title
         description
         author
+        fbId
       }
     }
   }
