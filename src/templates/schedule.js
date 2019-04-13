@@ -33,6 +33,7 @@ const Timetable = styled.div`
 
 const Schedule = ({ node }) => (
   <section>
+    <SEO title="Ahimsa Shivam Yoga Center" lang={node.node_locale} />
     <Banner banner={node.banner} heading={node.heading} locale={node.node_locale} />
     <ContentGrid>
       <ContentContainer>
@@ -52,7 +53,6 @@ class ScheduleTemplate extends React.Component {
     const data = this.props.data;
     return (
       <Layout data={this.props.data} location={this.props.location}>
-        <SEO title="Ahimsa Shivam Yoga Center" lang={node.node_locale} />
         <Schedule node={this.props.data.contentfulSchedule}></Schedule>
       </Layout>
     )

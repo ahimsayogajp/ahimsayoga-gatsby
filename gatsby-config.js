@@ -4,7 +4,7 @@ const languages = require('./src/data/languages');
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://ahimsayoga.jp`,
+    siteUrl: `https://ahimsayoga.jp/`,
     title: `Ahimsa - Shivam Yoga Center`,
     description: `ヨガ教室：　Kanazawa 金沢　ヨガ, Nomi 能美市`,
     keywords: `ヨガ, ヨガ教室, ヨガ能美市, ヨガ金沢`,
