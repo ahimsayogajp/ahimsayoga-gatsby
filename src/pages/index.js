@@ -2,6 +2,8 @@ import React from 'react';
 import { graphql, navigate, withPrefix } from 'gatsby'
 import { getUserLangKey } from 'ptz-i18n';
 
+import SEO from "../components/seo"
+
 class RedirectIndex extends React.PureComponent {
   constructor(args) {
     super(args);
@@ -17,7 +19,7 @@ class RedirectIndex extends React.PureComponent {
   }
 
   render() {
-    return (<div />);
+    return (<SEO title="Ahimsa Shivam Yoga Center" />);
   }
 }
 
