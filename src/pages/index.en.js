@@ -78,7 +78,7 @@ class IndexPage extends React.Component {
   render() {
     return (
       <Layout data={this.props.data} location={this.props.location}>
-        <SEO title="Ahimsa Shivam Yoga Center" lang='en' />
+        <SEO title="Ahimsa - Shivam Yoga Center" lang='en' />
         <Home node={this.props.data.page}></Home>
       </Layout>
     )

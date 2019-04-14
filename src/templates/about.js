@@ -58,7 +58,7 @@ const Image = styled(Img)`
 
 const About = ({ node }) => (
   <section>
-    <SEO title="Ahimsa Shivam Yoga Center" lang={node.node_locale} />
+    <SEO title="Ahimsa - Shivam Yoga Center" lang={node.node_locale} />
     <Banner banner={node.banner} heading={node.heading} locale={node.node_locale} />
     <ContentGrid>
       <ContentContainer>

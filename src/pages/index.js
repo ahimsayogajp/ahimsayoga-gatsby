@@ -19,7 +19,7 @@ class RedirectIndex extends React.PureComponent {
   }
 
   render() {
-    return (<SEO title="Ahimsa Shivam Yoga Center" />);
+    return (<SEO title="Ahimsa - Shivam Yoga Center" />);
   }
 }
 
