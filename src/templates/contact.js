@@ -129,7 +129,7 @@ export const pageQuery = graphql`
       }
       image {
         title
-        fluid {
+        fluid (quality: 85) {
           src
           srcSet
           aspectRatio

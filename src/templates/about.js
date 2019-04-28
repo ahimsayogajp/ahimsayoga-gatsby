@@ -142,7 +142,7 @@ export const pageQuery = graphql`
       instructors {
         name
         photo {
-          fluid {
+          fluid (quality: 85) {
             src
             srcSet
             aspectRatio

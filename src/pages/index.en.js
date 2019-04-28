@@ -110,7 +110,7 @@ export const pageQuery = graphql`
       slug
       hero {
         title
-        fluid {
+        fluid (quality: 95) {
           src
           srcSet
           aspectRatio

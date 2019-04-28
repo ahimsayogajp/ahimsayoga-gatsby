@@ -78,7 +78,7 @@ export const pageQuery = graphql`
       heading
       banner {
         title
-        fluid {
+        fluid (quality: 85) {
           src
           srcSet
           aspectRatio
