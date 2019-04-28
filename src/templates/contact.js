@@ -1,5 +1,6 @@
 import React from "react"
 import * as PropTypes from "prop-types"
+import Helmet from "react-helmet"
 import { Link, graphql } from 'gatsby'
 import Img from "gatsby-image"
 import styled from "styled-components"
@@ -75,6 +76,26 @@ const Contact = ({ node }) => (
               __html: node.body.childMarkdownRemark.html
             }}
           />
+          <Helmet>
+            <script type="application/ld+json">
+              {
+                `{
+                  "@context" : "http://schema.org",
+                  "@type" : "Organization",
+                  "name": "Ahimsa - Shivam Yoga Center",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "石川県能美市",
+                    "postalCode": "923-1208",
+                    "streetAddress": "和佐谷町丁40-2"
+                  },
+                  "url" : "https://ahimsayoga.jp",
+                  "email": "hello(at)ahimsayoga.jp",
+                  "telephone": "+81-70-4440-8396"
+                }`
+              }
+            </script>
+          </Helmet>
         </ContactDetail>
         <Image
           key={node.image.fluid.src}
